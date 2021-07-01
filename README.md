@@ -3,7 +3,7 @@ We are creating a database tool for the project eInformatics@Austria. With this 
 
 Teachers should be able to upload their own SQL database and create their own adventures.
 
-<h3> Implementation <h3>
+<h3> Implementation </h3>
 The query should be analyzed syntactically (with the help of the result code and, if necessary, an error message). With the help of a sample solution, the number of result lines can be compared - if the number is the same, the task is considered solved and the points are credited to the learners' points account (if authenticated).
 
 In later versions of the project, it will also be possible to store various sample solutions in the form of queries, which will also be used to analyze the user's query.
