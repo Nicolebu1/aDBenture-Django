@@ -21,6 +21,9 @@ pip install pillow
 SQL EXPLORER <br>
 pip install django-sql-explorer
 
+POSTGRES <br>
+pip install psycopg2-binary
+
 Migrate <br>
 python manage.py migrate
 
