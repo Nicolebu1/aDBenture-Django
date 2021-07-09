@@ -1,0 +1,97 @@
+<html lang="de">
+
+  <head>
+    <title>AdventureDashboard</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+      <link rel="stylesheet" href="static/admin/css/style.css">
+    <link rel="stylesheet" href="static/admin/css/profile.css">
+  </head>
+
+  <body>
+
+    <header>
+      <a href = "login"><div class="imgcontainer" style="margin-bottom: -1%;">
+      <img src="static/images/detective.png" alt="Avatar" class="avatar" style="float: left; margin-left: 20%; width: auto;" href = ''></div></a>
+
+      <a href = "profile">
+        <img  src="static/images/sam_winter_av.png" alt="Avatar" class="avatar" style="float: right; margin-right: 20%; width: auto;" href="profile">
+        <figcaption style="margin-right: -100px; margin-top: 7%; text-align: center; float: right;">{{request.user.nick_name}}</figcaption>
+      </a>
+  <br>
+      <h1 style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; text-align: center;">Willkommen bei a<span
+          style="color: #4CAF50;">DB</span>enture
+        </h1>
+
+    </div>
+  </header>
+
+    <form>
+      <div class="navbar">
+
+          <div class="dropdown" style="padding: 1%; color: white;"> Willkommen zurück, {{request.user.nick_name}}!
+          </div>
+      </div>
+
+  <br>
+
+  <div id="menu">
+    <ul>
+      <li class="topmenu">
+        <a><i class="fa fa-cog fa-fw"></i></a>
+        <ul>
+          <li class="submenu"><a href="avatar">Avatar wählen</a></li>
+          <li class="submenu"><a href="settings">Daten ändern</a></li>
+          <li id="delete" class="submenu"><a href="">Profil löschen</a></li>
+        </ul>
+      </li>
+    </ul>
+
+
+  </div>
+  <div class="box4" >
+    <a  href="adbenturePolice" style="text-decoration: none;" >
+      <p style="color: black; text-align: center; margin: 5%; font-size: 20px;">Fortsetzen: </p>
+       <img src="static/images/police.png" alt="Bäckerei" style=" width:200px; height:100px;">
+    </a>
+    <br>
+    <br>
+
+    <div id="foo" style="text-align: center; font-size: 20px;">5/6</div>
+    <meter style="width: 90%; height:20px; margin-left: 5%;" value="50" min="0" max="60"/></meter>
+    <br>
+    <br>
+
+
+
+
+  </div>
+
+
+  <form>
+    <div class="container" >
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="static/images/sam_winter.png" style="width: 100%;">
+          </div>
+          <div class="flip-card-back">
+            <h1>Sam Winter</h1>
+            <p>sam.winter@dbexperts.db</p>
+            <p>1.500.000</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container" style="background-color:#f1f1f1; margin-top: 5%;">
+      <a href="login"> <input class="cancelbtn" type="button" value="Zurück"> </a>
+      <a href="overview"><input class="submitbutton" type= "button" value="Zu den Abenteuern"></a>
+    </div>
+  </form>
+
+
+
+</body>
+
+</html>
