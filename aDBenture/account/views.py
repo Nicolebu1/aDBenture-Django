@@ -6,7 +6,7 @@ from account.forms import RegistrationForm, AccountAuthenticationForm
 # Create your views here.
 
 @login_required
-def homeView(request):
+def profileView(request):
     return render(request, "profile.html")
 
 def loginView(request):
