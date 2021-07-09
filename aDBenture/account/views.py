@@ -9,6 +9,7 @@ from account.forms import RegistrationForm, AccountAuthenticationForm
 def profileView(request):
     return render(request, "profile.html")
 
+
 def loginView(request):
     context = {}
     if request.POST:
