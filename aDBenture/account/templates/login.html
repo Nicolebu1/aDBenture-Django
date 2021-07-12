@@ -5,26 +5,32 @@
 <html lang="de">
 
 <head>
-  <title>Home</title>
+  <title>Login</title>
 
 
 </head>
 
 <body>
 
-    <div class="imgcontainer" style="margin-top:2%; margin-bottom:5%; margin-left: 25%">
+<header style="margin-bottom: 4%;">
+    <a href = "login">
+        <div class="imgcontainer">
+      <img src="static/images/policeman.jpg" alt="Avatar" class="policeImg">
+        </div>
+    </a>
 
-        <img src="static/images/detective.png" alt="Avatar" class="avatar" style="width: 10%; float:left; margin-right:5%">
 
-        <h1 style="font-size: 3em; padding-top:2%;">Willkommen bei a<span
-          style="color: #4CAF50;">DB</span>enture </h1>
-    </div>
+    <br>
+      <h1>Willkommen bei a<span style="color: #0D6EFD;">DB</span>enture</h1>
+</header>
+
+
 
 
     <div class="container" style="width:40%; float:left; margin-left:10%; margin-top:5%">
       <div class="textbox">
         <p class="text1">
-          <span style="font-size: 30px;">a<span style="color: #4CAF50;">DB</span>enture</span> ist ein Spiel, mit dem du
+          <span style="font-size: 30px;">a<span style="color: #0D6EFD;">DB</span>enture</span> ist ein Spiel, mit dem du
           auf spannende Art und Weise
           einen Teil der Welt der Datenbanken etwas näher kennenlernen kannst.
         </p>
@@ -56,11 +62,13 @@
                   <label class="control-label" for="id_email">E-Mail Adresse</label>
                     {{ form.email.errors }}
                 </div>
+
                 <div class="form-label-group">
                   {% render_field form.password class="form-control" type="password" %}
                   <label for="id_password">Passwort</label>
                     {{ form.password.errors }}
                 </div>
+
                 <button class="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2" type="submit">Login</button>
               <a href="{% url 'register' %}" class="btn btn-outline-primary btn-block btn-login text-uppercase font-weight-bold mb-2"> Registrieren</a>
                 <div class="text-center">

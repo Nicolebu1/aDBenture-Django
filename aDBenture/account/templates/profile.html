@@ -1,30 +1,37 @@
+{% extends 'base.html' %}
+{% load widget_tweaks %}
+{% block content %}
 <html lang="de">
 
   <head>
     <title>AdventureDashboard</title>
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
     <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
-      <link rel="stylesheet" href="static/admin/css/style.css">
     <link rel="stylesheet" href="static/admin/css/profile.css">
   </head>
 
   <body>
 
-    <header>
-      <a href = "login"><div class="imgcontainer" style="margin-bottom: -1%;">
-      <img src="static/images/detective.png" alt="Avatar" class="avatar" style="float: left; margin-left: 20%; width: auto;" href = ''></div></a>
+<header>
+    <a href = "login">
+        <div class="imgcontainer">
+      <img src="static/images/policeman.jpg" alt="Avatar" class="policeImg" style="height: 8em; width: 5em;">
+        </div>
+    </a>
 
-      <a href = "profile">
-        <img  src="static/images/sam_winter_av.png" alt="Avatar" class="avatar" style="float: right; margin-right: 20%; width: auto;" href="profile">
-        <figcaption style="margin-right: -100px; margin-top: 7%; text-align: center; float: right;">{{request.user.nick_name}}</figcaption>
-      </a>
-  <br>
-      <h1 style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; text-align: center;">Willkommen bei a<span
-          style="color: #4CAF50;">DB</span>enture
-        </h1>
+    <br>
+      <h1>Willkommen bei a<span style="color: #0D6EFD;">DB</span>enture</h1>
 
-    </div>
-  </header>
+
+    <a href = "profile" style="text-decoration: none;">
+    <figure>
+        <img src="static/images/sam_winter_av.png" alt="Avatar" class="profileImgSmall" style="height: 5em; width: 5em;"/>
+        <!-- <img src="media/profile_images{{request.user.profile_img }}"  class="avatar" /> -->
+
+        <figcaption><center>{{request.user.nick_name}}</center></figcaption>
+        <a class="small" href="{% url 'logout' %}"><center>Logout</center></a>
+    </figure></a>
+</header>
 
     <form>
       <div class="navbar">
@@ -74,19 +81,20 @@
         <div class="flip-card-inner">
           <div class="flip-card-front">
             <img src="static/images/sam_winter.png" style="width: 100%;">
+              <!-- <img src="media/profile_images{{request.user.profile_img }}"  style="width: 100%;"/> -->
           </div>
           <div class="flip-card-back">
-            <h1>Sam Winter</h1>
-            <p>sam.winter@dbexperts.db</p>
+              <br>
+            <h1>{{request.user.nick_name}}</h1>
+            <p>{{request.user.email}}</p>
             <p>1.500.000</p>
           </div>
         </div>
       </div>
     </div>
 
-    <div class="container" style="background-color:#f1f1f1; margin-top: 5%;">
-      <a href="login"> <input class="cancelbtn" type="button" value="Zurück"> </a>
-      <a href="overview"><input class="submitbutton" type= "button" value="Zu den Abenteuern"></a>
+    <div class="container" style="margin-top: 5%;">
+      <a href="overview"><input class="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2" type= "button" value="Zu den Abenteuern"></a>
     </div>
   </form>
 
@@ -95,3 +103,4 @@
 </body>
 
 </html>
+{% endblock content %}

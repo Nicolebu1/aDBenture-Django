@@ -1,25 +1,3 @@
-span:empty::before {
-  color: black;
-}
-span[data-placeholder]:not([data-placeholder=""]):empty::before {
-  content: attr(data-placeholder);
-}
-span:empty::before {
-  content: 'fallback placeholder';
-}
-
-#placeholder{
-  margin-left: 20%;
-}
-
-
-.play-link{
-  background-color: #4CAF50;
-    color: white;
-    float: right;
-    border-radius: 50px;
-    width: auto;
-}
 
 .container{
 margin-bottom: 10%;
@@ -68,7 +46,7 @@ img{
 }
 
 .flip-card-back {
-  background-color: #4CAF50;
+  background-color: #0D6EFD;
   color: white;
   transform: rotateY(180deg);
 }
@@ -94,7 +72,6 @@ img{
 
 .topmenu a {
   float:left;
-  width:30px;
   text-align:center;
 }
 
@@ -120,7 +97,7 @@ img{
 
 #menu a:hover, .topmenu.on a {
   color:white;
-  background-color:#4CAF50 !important;
+  background-color:#0D6EFD !important;
 }
 
 #delete a:hover{
