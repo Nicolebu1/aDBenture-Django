@@ -1,61 +1,71 @@
+{% extends 'base.html' %}
+{% load widget_tweaks %}
+{% block content %}
+
 <html lang="de">
 
 <head>
   <title>Change</title>
-      <link rel="stylesheet" href="static/admin/css/style.css">
-    <link rel="stylesheet" href="static/admin/css/change.css">
+
 </head>
 
 <body>
 
- <header>
-      <a href = "login"><div class="imgcontainer" style="margin-bottom: -1%;">
-      <img src="static/images/detective.png" alt="Avatar" class="avatar" style="float: left; margin-left: 20%; width: auto;" href = ''></div></a>
+<header>
+    <a href = "login">
+        <div class="imgcontainer">
+      <img src="static/images/policeman.jpg" alt="Avatar" class="policeImg" style="height: 8em; width: 5em;">
+        </div>
+    </a>
 
-      <a href = "profile">
-        <img  src="static/images/sam_winter_av.png" alt="Avatar" class="avatar" style="float: right; margin-right: 20%; width: auto;" href="profile">
-        <figcaption style="margin-right: -100px; margin-top: 7%; text-align: center; float: right;">{{request.user.nick_name}}</figcaption>
-      </a>
-  <br>
-      <h1 style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; text-align: center;">Willkommen bei a<span
-          style="color: #4CAF50;">DB</span>enture   
-        </h1>
-  
-    </div>
-  </header>
+    <br>
+      <h1>Willkommen bei a<span style="color: #0D6EFD;">DB</span>enture</h1>
 
-  <form>
+
+    <a href = "profile" style="text-decoration: none;">
+    <figure>
+        <img src="static/images/sam_winter_av.png" alt="Avatar" class="profileImgSmall" style="height: 5em; width: 5em;"/>
+        <!-- <img src="media/profile_images{{request.user.profile_img }}"  class="avatar" /> -->
+
+        <figcaption><center>{{request.user.nick_name}}</center></figcaption>
+        <a class="small" href="{% url 'logout' %}"><center>Logout</center></a>
+    </figure></a>
+</header>
+
+
+
+   <form [formGroup]="form">
     <div class="navbar">
-      
         <div class="dropdown" style="padding: 1%; color: white;"> Daten ändern
         </div>
     </div>
+       <br>
+       <br>
 
-    <br>
-    <br>
-
-    
-  <form [formGroup]="form">
-    <div   style="margin-left: 30%;">
-      <label class="full-width-input" for="email">
+    <div class="form-label-group">
+      <label class="control-label" for="email">
         E-Mail
-        <br>
         <input type="text" id="email" placeholder="Gib deine neue E-Mail ein..." formControlName="email" style="width: 500px;">
-        <br>
-        <button for="email" (click)="changeEmail()" style="width: 500px;">E-Mail ändern</button>
+          <br>
+          <br>
+        <button for="email" (click)="changeEmail()" class="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2">E-Mail ändern</button>
       </label>
-      <label class="full-width-input">
+    </div>
         <br>
         <br>
         <br>
+        <br>
+        <br>
+        <br>
+
+    <div class="form-label-group">
+      <label class="control-label" for="name">
         Name
-        <br>
         <input type="text" id="name" placeholder="Gib deinen neuen Namen ein..." name ="name" style="width: 500px;">
         <br>
-        <button for="name" (click)="changeName()" style="width: 500px; display: inline-block;">Name ändern</button>
         <br>
+        <button for="name" (click)="changeName()" class="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2">Name ändern</button>
       </label>
-
     </div>
 
   </form>
@@ -63,3 +73,5 @@
 </body>
 
 </html>
+
+{% endblock content %}

@@ -1,28 +1,36 @@
+{% extends 'base.html' %}
+{% load widget_tweaks %}
+{% block content %}
 <html lang="de">
 
 <head>
   <title>Avatar</title>
-      <link rel="stylesheet" href="static/admin/css/style.css">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
     <link rel="stylesheet" href="static/admin/css/avatar.css">
-</head>
+  </head>
 
 <body>
 
-  <header>
-      <a href = "login"><div class="imgcontainer" style="margin-bottom: -1%;">
-      <img src="static/images/detective.png" alt="Avatar" class="avatar" style="float: left; margin-left: 20%; width: auto;" href = ''></div></a>
+<header>
+    <a href = "login">
+        <div class="imgcontainer">
+      <img src="static/images/policeman.jpg" alt="Avatar" class="policeImg" style="height: 8em; width: 5em;">
+        </div>
+    </a>
 
-      <a href = "profile">
-        <img  src="static/images/sam_winter_av.png" alt="Avatar" class="avatar" style="float: right; margin-right: 20%; width: auto;" href="profile">
-        <figcaption style="margin-right: -100px; margin-top: 7%; text-align: center; float: right;">{{request.user.nick_name}}</figcaption>
-      </a>
-  <br>
-      <h1 style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; text-align: center;">Willkommen bei a<span
-          style="color: #4CAF50;">DB</span>enture   
-        </h1>
-  
-    </div>
-  </header>
+    <br>
+      <h1>Willkommen bei a<span style="color: #0D6EFD;">DB</span>enture</h1>
+
+
+    <a href = "profile" style="text-decoration: none;">
+    <figure>
+        <img src="static/images/sam_winter_av.png" alt="Avatar" class="profileImgSmall" style="height: 5em; width: 5em;"/>
+        <!-- <img src="media/profile_images{{request.user.profile_img }}"  class="avatar" /> -->
+
+        <figcaption><center>{{request.user.nick_name}}</center></figcaption>
+        <a class="small" href="{% url 'logout' %}"><center>Logout</center></a>
+    </figure></a>
+</header>
 
 
   <form>
@@ -189,10 +197,16 @@
       </div>
     </div>
 
-    <button class="button" style="visibility: hidden;">Speichern</button>
+
+    <div class="container">
+         <button class="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2" style=" margin-top: 10%; float:right;">Speichern</button>
+
+    </div>
+
 
   </form>
 
 </body>
 
 </html>
+{% endblock content %}
