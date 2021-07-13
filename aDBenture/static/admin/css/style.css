@@ -1,17 +1,3 @@
-/*--------------------------------------- Header  ----------------------------------------*/
-
-  /* Avatar image */
-  img.avatar {
-    float: right;
-    height: 8em; 
-  }
-
-/* Welcome to aDBenture */
-  h1 {
-    font-family:Georgia, serif;
-    font-weight:normal;
-    font-size:36pt;
-  }
 
 
 
@@ -21,162 +7,8 @@
 
 
 
-.box1 {
-  float: left;
-  width: 65%;
-  box-sizing: border-box;
-}
-
-.box2 {
-  float: right;
-  width: 30%;
-  box-sizing: border-box;
-  }
-
-.box3 {
-  float: right;
-  width: 25%;
-  box-sizing: border-box;
-  background-color: #efefef;
-  margin-top: 1em;
-  padding-right: 1em;
-  }
-
-  .box4 {
-    float: right;
-    box-sizing: border-box;   
-    margin-top: 2%;
-    margin-right: 2%;  
-    }
 
 
-table {
-  margin: 5%;
-  border-collapse: collapse;
-  border-spacing: 0;
-  width: 90%;
-  border: 1px solid #ddd;
-}
-
-th, td {
-  text-align: left;
-  padding: 16px;
-}
-
-
-tr:nth-child(even) {
-  background-color: #e7e4e4;
-}
-
-figcaption{
-  text-align: center;
-  color: black;
-}
-
-details{
-  cursor: pointer;
-}
-
-
-
-
-
-/*--------------------------------------------------------------- Navbar container --------------------------------------*/
-.navbar {
-  overflow: hidden;
-  background-color: #4CAF50;
-  font-family: Arial;
-}
-
-/* Links inside the navbar */
-.navbar a {
-  float: left;
-  font-size: 16px;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-}
-
-/* The dropdown container */
-.dropdown {
-  float: left;
-  overflow: hidden;
-}
-
-/* Dropdown button */
-.dropdown .dropbtn {
-  font-size: 16px;
-  border: none;
-  outline: none;
-  color: white;
-  padding: 14px 16px;
-  background-color: inherit;
-  font-family: inherit; /* Important for vertical align on mobile phones */
-  margin: 0; /* Important for vertical align on mobile phones */
-}
-
-/* Add a red background color to navbar links on hover */
-.navbar a:hover, .dropdown:hover .dropbtn {
-  background-color: #ddd;
-}
-
-/* Dropdown content (hidden by default) */
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f9f9f9;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-}
-
-/* Links inside the dropdown */
-.dropdown-content a {
-  float: none;
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-  text-align: left;
-}
-
-/* Add a grey background color to dropdown links on hover */
-.dropdown-content a:hover {
-  background-color: #ddd;
-}
-
-/* Show the dropdown menu on hover */
-.dropdown:hover .dropdown-content {
-  display: block;
-}
-
-
-.dropdown:focus-within #schema{
-  visibility: visible;
-  opacity: 1;
-  display: block;
-}
-
-
-#schema {
-  padding: 1em;
-}
-
-
-
-html, body, button, h1, span{
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    font-weight:normal;
-  }
-  
-  
-  /* Bordered form */
-  form { 
-    width: 60%;
-    margin: auto;
-  }
-  
   
   /* Full-width inputs */
   input[type=text], input[type=password] {
@@ -188,66 +20,12 @@ html, body, button, h1, span{
     box-sizing: border-box;
   }
   
-  /* Set a style for all buttons */
-  button {
-    background-color: #4CAF50;
-    color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
-    cursor: pointer;
-    width: 100%;
-  }
-  
-  .homebutton {
-    float: left;
-    background-color: #4CAF50;
-    color: white;
-    width: 30%;
-    padding: 20px;
-    margin-right: 3.33333%;
-    border: none;
-    cursor: pointer;   
-  }
-  
-  /* Add a hover effect for buttons */
-  button:hover {
-    opacity: 0.8;
-  }
-  
-  /* Extra style for the cancel button (red) */
-  .cancelbtn {
-    width: auto;
-    padding: 10px 18px;
-    color: white;
-    background-color: #f44336;
-  }
-  
-  
 
-  
-  /* Add padding to containers */
-  .container {
-    padding: 16px;
-   
-  }
-  
-  /* The "Forgot password" text */
-  span.psw {
-    float: right;
-    padding-top: 16px;
-    
-  }
-  
- 
-  
   #questionHeader{
     font-size: 26pt;
   }
   
-  
-  
-  
+
   @media (max-width: 800px) {
   
     form {  
@@ -262,19 +40,19 @@ html, body, button, h1, span{
     }
   
     img.avatar {
-      display: none; 
+      display: none;
     }
   
     .homebutton {
       list-style: none;
-      background-color: #4CAF50;
+      background-color: #0D6EFD;
       color: white;
       padding: 14px 20px;
       margin: 8px 0;
       border: none;
       cursor: pointer;
       width: 100%;
-      
+
     }
   
     span.psw {
@@ -291,68 +69,14 @@ html, body, button, h1, span{
     }
   }
 
-
-
-
-  /* --------------------Home-------------------------------- */
-
-  span:empty::before {
-    color: black;
-  }
-  span[data-placeholder]:not([data-placeholder=""]):empty::before {
-    content: attr(data-placeholder);
-  }
-  span:empty::before {
-    content: 'fallback placeholder';
-  }
-  
-  #placeholder{
-    margin-left: 20%;
-  }
-  
-  
-  
-  
-  .textbox{
-      font-size:20px;
-      text-align: center;
-      line-height: 2;
-      margin: 10%;
-  }
-  
-  .text1{
-      padding-top: 10%;
-  }
-  
-  
-  @media (max-width: 800px) {
-    #placeholder{
-      margin: 0;
-    }
-    .textbox{
-        font-size: 16px;
-        line-height: 1;
-    }
-  
-  }
-
-
-
-
-
-
 /*---------------------------------- App ----------------------------------------*/
-  
-.imgcontainer{
-    padding-bottom: 2%;
-  }
-  
+
   .header{
   margin-bottom: 10%;
   }
   
   .profile-link{
-    background-color: #4CAF50;
+    background-color: #0D6EFD;
     color: white;
     float: right;
     border-radius: 20px;
@@ -426,48 +150,7 @@ html, body, button, h1, span{
   }
   
     
-   
-  
-  
-  /*-------------------------------Picture from Database----------------------------------*/
-  .database{
-    -webkit-transform: scale(1);
-    -moz-transform: scale(1);
-    -ms-transform: scale(1);
-    -o-transform: scale(1);
-    transform: scale(1);
-  }
-  
-  .database:hover{
-    -webkit-transform: scale(2);
-    -moz-transform: scale(2);
-    -ms-transform: scale(2);
-    -o-transform: scale(2);
-    transform: scale(2);
-  }
-  
-  .database2{
-    display: block;
-    margin: 0px auto;
-  }
-  
-  .database2{
-    -webkit-transform: scale(1);
-    -moz-transform: scale(1);
-    -ms-transform: scale(1);
-    -o-transform: scale(1);
-    transform: scale(1);
-  }
-  
-  .database2:hover{
-    -webkit-transform: scale(6);
-    -moz-transform: scale(6);
-    -ms-transform: scale(6);
-    -o-transform: scale(6);
-    transform: scale(6);
-  }
-  
-  
+
   
   textarea {
     display: block;
@@ -475,21 +158,7 @@ html, body, button, h1, span{
     margin-right: auto;
   }
   
-  .submitbutton {
-    float: right;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    cursor: pointer;
-    width: auto;
-    padding: 10px 18px;
-  }
 
- 
-  
-  
-  
-  
   /*-------------------------------Responsivity----------------------------------*/
   
   @media (max-width: 800px) {
@@ -511,7 +180,7 @@ html, body, button, h1, span{
   
     .submitbutton {
       list-style: none;
-      background-color: #4CAF50;
+      background-color: #0D6EFD;
       color: white;
       padding: 14px 20px;
       margin: 8px 0;
@@ -525,34 +194,12 @@ html, body, button, h1, span{
     @media (max-width: 450px) {  
       img{
           width:200pt;
-          
-      } 
-    }
-  
-  
-  
-  
-  
-  
-  
-    
-   
-    /*------------------------------------ Register ----------------------------------*/
 
-    #block{
-        float: left;
-        width: 25%;
+      }
     }
-    
-    .invalid-feedback{
-        padding: 1%;
-        padding-left: 5%;
-        color: white;
-        background-color: red;
-        margin-bottom: 3%;
-    }
-    
-    
+  
+  
+
     @media (max-width: 800px) {
     
         #block{
@@ -571,52 +218,14 @@ html, body, button, h1, span{
     }
 
 
-    /* ----------------------------------------------------------adventureDashboard */
-    .imageAdventure {
-      float: left;
-      width: 30%;
-      margin-right: 3.33333%;
-      padding: 20px;
-      box-sizing: border-box;
-    }
 
 
 
-    /*--------------------------------- Pagination links */
-
-.pagination{
-  display: flex; 
-  align-items: center; 
-  justify-content: center;
-}
-  
-.pagination a {
-  color: black;
-  float: left;
-  padding: 8px 16px;
-  text-decoration: none;
-  transition: background-color .3s;
-}
-
-/* Style the active/current link */
-.pagination a.active {
-  background-color: #4CAF50;
-  color: white;
-}
-
-/* Add a grey background color on mouse-over */
-.pagination a:hover:not(.active) {background-color: #ddd;}
 
 
 
-    footer{
-      width : 60%;
-      /* height : 50px;*/
-      background-color : #efefef;
-      clear : both;
-      position: absolute;
-      /* bottom: -100%; /* wichtig */   */
-    }
+
+
 
     
 

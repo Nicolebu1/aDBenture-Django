@@ -1,31 +1,37 @@
+{% extends 'base.html' %}
+{% load widget_tweaks %}
+{% block content %}
 <html lang="de">
 
 <head>
   <title>AdventureDashboard</title>
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
-  <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
-  <link rel="stylesheet" href="static/admin/css/style.css">
+
+
 </head>
 
 <body>
 
-  <header>
-      <a href = "login"><div class="imgcontainer" style="margin-bottom: -1%;">
-      <img src="static/images/detective.png" alt="Avatar" class="avatar" style="float: left; margin-left: 20%; width: auto;" href = ''></div></a>
+<header>
+    <a href = "login">
+        <div class="imgcontainer">
+      <img src="static/images/policeman.jpg" alt="Avatar" class="policeImg" style="height: 8em; width: 5em;">
+        </div>
+    </a>
 
-      <a href = "profile">
-        <img  src="static/images/sam_winter_av.png" alt="Avatar" class="avatar" style="float: right; margin-right: 20%; width: auto;" href="profile">
-        <figcaption style="margin-right: -100px; margin-top: 7%; text-align: center; float: right;">{{request.user.nick_name}}</figcaption>
-      </a>
-  <br>
-      <h1 style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; text-align: center;">Willkommen bei a<span
-          style="color: #4CAF50;">DB</span>enture   
-        </h1>
-  
-    </div>
-  </header>
+    <br>
+      <h1>Willkommen bei a<span style="color: #0D6EFD;">DB</span>enture</h1>
 
- 
+
+    <a href = "profile" style="text-decoration: none;">
+    <figure>
+        <img src="static/images/sam_winter_av.png" alt="Avatar" class="profileImgSmall" style="height: 5em; width: 5em;"/>
+        <!-- <img src="media/profile_images{{request.user.profile_img }}"  class="avatar" /> -->
+
+        <figcaption><center>{{request.user.nick_name}}</center></figcaption>
+        <a class="small" href="{% url 'logout' %}"><center>Logout</center></a>
+    </figure></a>
+</header>
 
   <form>
     <div class="navbar">
@@ -49,7 +55,7 @@
     
      <a class="imageAdventure" href="adbenturePolice" style="text-decoration: none;">
         <img src="static/images/police.png" alt="Polizei" style="width: 100%;">
-        <figcaption>Sonderkommando Datenbanken</figcaption> 
+        <figcaption>SoKo Datenbanken</figcaption>
 
         <div id="foo" style="text-align: center; font-size: 20px;">5/7</div>
          <meter style="width: 90%; height:20px; margin-left: 5%;" value="50" min="0" max="70"/></meter>
@@ -77,3 +83,4 @@
 </body>
 
 </html>
+{% endblock content %}

@@ -2,40 +2,83 @@
 {% load widget_tweaks %}
 {% block content %}
 
-<div class="container-fluid">
-  <div class="row no-gutter">
-    <div class="d-none d-md-flex col-md-4 col-lg-6 bg-image"></div>
-    <div class="col-md-8 col-lg-6">
-      <div class="login d-flex align-items-center py-5">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-9 col-lg-8 mx-auto">
-              <h1 class="login-heading mb-4">aDBenture App</h1>
-                <h3 class="login-heading mb-4">Willkommen zurück</h3>
+<html lang="de">
+
+<head>
+  <title>Login</title>
+
+
+</head>
+
+<body>
+
+<header style="margin-bottom: 4%;">
+    <a href = "login">
+        <div class="imgcontainer">
+      <img src="static/images/policeman.jpg" alt="Avatar" class="policeImg">
+        </div>
+    </a>
+
+
+    <br>
+      <h1>Willkommen bei a<span style="color: #0D6EFD;">DB</span>enture</h1>
+</header>
+
+
+
+
+    <div class="container" style="width:40%; float:left; margin-left:10%; margin-top:5%">
+      <div class="textbox">
+        <p class="text1">
+          <span style="font-size: 30px;">a<span style="color: #0D6EFD;">DB</span>enture</span> ist ein Spiel, mit dem du
+          auf spannende Art und Weise
+          einen Teil der Welt der Datenbanken etwas näher kennenlernen kannst.
+        </p>
+        <p class="text">
+          Mit diesem Tool hast du die Möglichkeit,
+          SQL-Beispiele in einer Art Adventure zu üben und dein Wissen zu festigen.
+        </p>
+        <p class="text">
+          Durch das Lösen von verschiedenen Aufgaben, sammelst du Punkte, die auf
+          deinem eigenen Profil gespeichert werden.
+        </p>
+        <p class="text">
+          Du kannst dein persönliches Profil natürlich auch mit einem Avatar personalisieren.
+        </p>
+      </div>
+        <a href="overview"><input class="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2" type= "button" value="Als Gast spielen"></a>
+
+    </div>
+
+
+
+
+
+    <div class="container" style="width:30%; float:right; margin-right:10%; margin-top:5%">
+                      <h3 class="login-heading mb-4">Einloggen oder Registrieren</h3>
               <form method="post">{% csrf_token %}
                 <div class="form-label-group">
                   {% render_field form.email class="form-control" %}
-                  <label for="id_email">E-Mail Adresse</label>
+                  <label class="control-label" for="id_email">E-Mail Adresse</label>
                     {{ form.email.errors }}
                 </div>
+
                 <div class="form-label-group">
                   {% render_field form.password class="form-control" type="password" %}
                   <label for="id_password">Passwort</label>
                     {{ form.password.errors }}
                 </div>
+
                 <button class="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2" type="submit">Login</button>
               <a href="{% url 'register' %}" class="btn btn-outline-primary btn-block btn-login text-uppercase font-weight-bold mb-2"> Registrieren</a>
                 <div class="text-center">
                   <a class="small" href="{% url 'password_reset' %}">Passwort vergessen?</a></div>
               </form>
-                <p style="margin-top: 128px;">
 
-                </p>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
-  </div>
-</div>
+
+
+</body>
+
+</html>
 {% endblock content %}
