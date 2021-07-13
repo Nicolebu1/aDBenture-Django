@@ -4,3 +4,4 @@
 
 # Our ignored files
 *.pyc
+*.sqlite3
