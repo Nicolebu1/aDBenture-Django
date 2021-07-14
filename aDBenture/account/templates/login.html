@@ -18,16 +18,11 @@
       <img src="static/images/policeman.jpg" alt="Avatar" class="policeImg">
         </div>
     </a>
-
-
     <br>
       <h1>Willkommen bei a<span style="color: #0D6EFD;">DB</span>enture</h1>
 </header>
 
-
-
-
-    <div class="container" style="width:40%; float:left; margin-left:10%; margin-top:5%">
+    <div class="container1">
       <div class="textbox">
         <p class="text1">
           <span style="font-size: 30px;">a<span style="color: #0D6EFD;">DB</span>enture</span> ist ein Spiel, mit dem du
@@ -53,9 +48,8 @@
 
 
 
-
-    <div class="container" style="width:30%; float:right; margin-right:10%; margin-top:5%">
-                      <h3 class="login-heading mb-4">Einloggen oder Registrieren</h3>
+    <div class="container2">
+                      <h3 id="loginRegister"class="login-heading mb-4" style="margin-left:20%;">Einloggen oder Registrieren</h3>
               <form method="post">{% csrf_token %}
                 <div class="form-label-group">
                   {% render_field form.email class="form-control" %}
@@ -76,6 +70,9 @@
               </form>
 
     </div>
+
+
+
 
 
 </body>

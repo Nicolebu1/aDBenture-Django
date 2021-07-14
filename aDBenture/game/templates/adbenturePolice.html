@@ -6,50 +6,39 @@
 <head>
   <title>Dashboard</title>
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
-
-
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
 </head>
 
 <body>
-
-<header>
+  <header>
     <a href = "login">
         <div class="imgcontainer">
       <img src="static/images/policeman.jpg" alt="Avatar" class="policeImg" style="height: 8em; width: 5em;">
         </div>
     </a>
-
     <br>
       <h1>Willkommen bei a<span style="color: #0D6EFD;">DB</span>enture</h1>
-
 
     <a href = "profile" style="text-decoration: none;">
     <figure>
         <img src="static/images/sam_winter_av.png" alt="Avatar" class="profileImgSmall" style="height: 5em; width: 5em;"/>
         <!-- <img src="media/profile_images{{request.user.profile_img }}"  class="avatar" /> -->
-
         <figcaption><center>{{request.user.nick_name}}</center></figcaption>
         <a class="small" href="{% url 'logout' %}"><center>Logout</center></a>
     </figure></a>
 </header>
 
-
-
-
-
-
-
-
- 
-
 <form>
-
     <div class="navbar">
-      
-        <div class="dropdown" style="padding: 1%; color: white;"> SoKo DB: Sonderkommando Datenbanken
+        <div class="dropdown" style="padding: 1%; color: white;"> SoKo Datenbanken</div>
+        <div>
+            <a class="fa fa-fw fa-home" href = "login"></a>
+            <a class="fa fa-fw fa-user" href = "profile"></a>
+            <a class="fa fa-sign-out" href = "logout"></a>
         </div>
     </div>
-    <img src="static/images/policeHeader.jpg" style="width: 100%;">
+
+    <img class="headerImg" src="static/images/policeHeader.jpg" style="width: 100%;">
     <br>
 
     <div class="pagination">
@@ -66,21 +55,19 @@
 
 
       <div class="container">
+          <div class="box1">
+              <div id="aufgabe_0" class="aufgabe">
+                  <p class="question"><span id="questionHeader" style="color:#0D6EFD;">Willkommen auf der Polizeiinspektion!</span><br>    </p>
 
-        <p class="question"><span id="questionHeader" style="color:#0D6EFD;">Willkommen auf der Polizeiinspektion!</span><br>    </p>
+                  <p style="text-align: justify;">In diesem Abenteuer hilfst du Chefinspektorin Lara Fischer und Chefinspektor Amar Kovač bei ihrem neuen Fall.
+                    Hier stehen Details zur Story. Hier stehen Details zur Story. Hier stehen Details zur Story.
+                    Hier stehen Details zur Story. Hier stehen Details zur Story. Hier stehen Details zur Story.
+                    Hier stehen Details zur Story. Hier stehen Details zur Story. Hier stehen Details zur Story.
+                    Hier stehen Details zur Story. Hier stehen Details zur Story. Hier stehen Details zur Story.<br><br>
+                    Alle Abfragen werden in der Loki-Datenbank durchgeführt. Um die Aufgaben zu lösen, benötigst du keinerlei Vorkenntnisse und kannst gleich mit der ersten von den sechs Aufgaben starten.
+                    Die Themen, die behandelt werden sind die folgenden: </p>
 
-      <div class="box1">
-      <div id="aufgabe_0" class="aufgabe">
-
-          <p style="text-align: justify;">In diesem Abenteuer hilfst du Chefinspektorin Lara Fischer und Chefinspektor Amar Kovač bei ihrem neuen Fall. 
-            Hier stehen Details zur Story. Hier stehen Details zur Story. Hier stehen Details zur Story.
-            Hier stehen Details zur Story. Hier stehen Details zur Story. Hier stehen Details zur Story.
-            Hier stehen Details zur Story. Hier stehen Details zur Story. Hier stehen Details zur Story.
-            Hier stehen Details zur Story. Hier stehen Details zur Story. Hier stehen Details zur Story.<br><br>
-            Alle Abfragen werden in der Loki-Datenbank durchgeführt. Um die Aufgaben zu lösen, benötigst du keinerlei Vorkenntnisse und kannst gleich mit der ersten von den sechs Aufgaben starten. 
-            Die Themen, die behandelt werden sind die folgenden: </p>
-
-            <ul>          
+            <ul class="infoList">
             <li>Projektion und Selection</li>
             <li>Distinct</li>
             <li>Aliasing</li>
@@ -114,15 +101,13 @@
 
  
 
-    <div class="box3">
-      <h4 style="padding-left: 1em">  Details zum Abenteuer</h4>
-      <ul>
-
-      <li>Anzahl der Aufgaben: 6</li>
-      <li>Punkte gesamt: 100</li>
-      <li>Datenbank: Loki DB</li>
-      </ul>
-
+            <div class="box3">
+      <p style="margin-top:1em; padding-left: 1em; list-style: none;"> <b>Details zum Abenteuer</b> </p>
+        <ul class="infoBox">
+            <li>Anzahl der Aufgaben: 6</li>
+            <li>Punkte gesamt: 100</li>
+            <li>Datenbank: Loki DB</li>
+        </ul>
      
         <details style="margin-left: 9%; margin-bottom:5%">
         <summary>benötigte Vorkenntnisse:</summary>
@@ -145,16 +130,14 @@
    
     </div>
 
-
-    <div class="box3" style="background-color: #0D6EFD; color:white;">
-      <h4 style="padding-left: 1em;"> Dein Spielstand:</h4>
-     
+            <div class="box3" style="background-color: #0D6EFD; color:white;">
+        <p style="padding-left: 1em;"> <b>Dein Spielstand:</b></p>
       <ul>Punkte:  70</ul>
       <ul>Aufgaben: 5/6</ul>
 
     </div>
 
-    </div>
+        </div>
 
   </div>
 

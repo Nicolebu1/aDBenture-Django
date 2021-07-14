@@ -5,9 +5,7 @@
     <meta charset="UTF-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
-
     <title>aDBenture App</title>
-
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
@@ -62,6 +60,24 @@ figure figcaption {
 }
 
 
+/*--------------------------------------- Infobox und Login  ----------------------------------------*/
+
+
+.container1{
+width:40%;
+float:left;
+margin-left:10%;
+margin-top:5%;
+}
+
+.container2{
+width:40%;
+float:right;
+margin-right:10%;
+margin-top:5%;
+}
+
+
 /*----------------------------------------------- Boxen  ----------------------------------------------*/
 
 
@@ -79,10 +95,11 @@ figure figcaption {
 
 .box3 {
   float: right;
-  width: 30%;
+  width: 35%;
   box-sizing: border-box;
   background-color: #efefef;
   margin-top: 1em;
+  margin-right: -2em;
   padding-right: 1em;
   }
 
@@ -176,6 +193,127 @@ figure figcaption {
   padding: 1em;
 }
 
+/* -----------------------------------------------Flip-Card------------------------------------------- */
+.fcImg{
+  width:300px;
+  height:300px;
+}
+
+.flip-card {
+  background-color: transparent;
+  margin:0 auto;
+  width: 300px;
+  height: 300px;
+  perspective: 1000px;
+  margin-bottom: 10%;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.flip-card-front {
+  background-color:transparent;
+  color: black;
+}
+
+.flip-card-back {
+  background-color: #0D6EFD;
+  color: white;
+  transform: rotateY(180deg);
+}
+
+
+/* -------------------------------------------------Menü---------------------------------------------- */
+#menu {
+  font-size:14px;
+}
+
+#menu ul {
+  list-style-type:none;
+  list-style-image:none;
+  margin:0;
+  padding: 0;
+}
+
+#menu li.topmenu {
+  float:left;
+}
+
+.topmenu a {
+  float:left;
+  text-align:center;
+}
+
+.topmenu ul{
+  display:none;
+}
+
+.topmenu a, .submenu a{
+  padding:20px;
+  color:black;
+  font-weight:bold;
+  text-decoration:none;
+  background-color:#f1f1f1;
+  margin:0;
+}
+
+.submenu a{
+  font-size:15px;
+  width:200px;
+  position:relative;
+  clear:both; /* special IE6 */
+}
+
+#menu a:hover, .topmenu.on a {
+  color:white;
+  background-color:#0D6EFD !important;
+}
+
+#delete a:hover{
+  background-color: #f44336 !important;
+}
+
+.topmenu:hover ul {
+  display:block;
+  z-index:500;
+}
+
+
+ /*--------------------------------------------- Avatar ----------------------------------------*/
+
+
+img{
+    width:90px;
+    height:90px;
+}
+
+#block{
+    float: left;
+    width: 20%;
+    margin:1%;
+}
+.avatarContainer{
+    margin-left:15%;
+}
 
 
  /*--------------------------------------------- Pagination links ----------------------------------------*/
@@ -398,220 +536,144 @@ details{
 
 
 
+    /* ------------------------------------------------------ ---------------------------------------*/
 
-    /* ----------------------------------------UNSURE ---------------------------------*/
+    /* --------------------------------------------Responsive ---------------------------------------*/
 
-          /* Full-width inputs */
-  input[type=text], input[type=password] {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
-  }
-
-
-  #questionHeader{
-    font-size: 26pt;
-  }
-
-
-  @media (max-width: 800px) {
-
-    form {
-      width: 100%;
-      margin: auto;
+ @media (max-width: 1500px) {
+    form{
+    width:90%
     }
 
-
-    h1{
-      margin-top: 10%;
-      font-size:22pt;
+    header{
+    padding-bottom:2%;
     }
 
-    img.avatar {
-      display: none;
+    .container1, .container2{
+    width:70%;
+    float:left;
     }
 
-    .homebutton {
-      list-style: none;
-      background-color: #0D6EFD;
-      color: white;
-      padding: 14px 20px;
-      margin: 8px 0;
-      border: none;
-      cursor: pointer;
-      width: 100%;
-
+    .container2{
+    margin-left:7%;
     }
 
-    span.psw {
-      display: block;
-      float: none;
+    .policeImg{
+    margin:0;
     }
 
-    .cancelbtn {
-      width: 100%;
+    .profileImgSmall, figure{
+    display:none;
     }
 
-    #questionHeader{
-      font-size: 18pt;
-    }
-  }
+ }
 
-/*---------------------------------- App ----------------------------------------*/
+  @media (max-width: 1000px) {
+      .policeImg{
+       display:none;
+       }
 
-  .header{
-  margin-bottom: 10%;
-  }
+       header{
+       text-align:center;
+       }
 
-  .profile-link{
-    background-color: #0D6EFD;
-    color: white;
-    float: right;
-    border-radius: 20px;
-    margin-right: 1%;
-    width: auto;
-  }
-
-  .logout-link{
-    background-color:red;
-    color: white;
-    float: right;
-    border-radius: 20px;
-    margin-right: 7%;
-    width: auto;
-  }
-
-
-
-  /*-------------------------------Responsivity----------------------------------*/
-  @media (max-width: 800px) {
-
-    .header{
-        margin-bottom: 15%;
-        display: block;
+        .box4{
+        padding-top:65%;
+        margin-right:20%;
         }
 
-    .logout-link{
-       margin-right: 5%;
+  }
+
+  @media  (max-width: 600px) {
+
+  img{
+        width:50px;
+        height:50px;
     }
 
-
-
-  }
-
-
-/*------------------------------------------------ Play--------------------------------------- */
-
-
-  span:empty::before {
-    color: black;
-  }
-  span[data-placeholder]:not([data-placeholder=""]):empty::before {
-    content: attr(data-placeholder);
-  }
-  span:empty::before {
-    content: 'fallback placeholder';
-  }
-
-  #placeholder{
-    margin-left: 20%;
-  }
-
-
-
-  #points{
-    padding:15px;
-    color:black;
-    font-weight:bold;
-    margin-left:10%;
-  }
-
-  .question{
-
-    margin-right: 15%;
-    line-height: 2;
-  }
-
-  .solution{
-    margin-left: 15%;
-    margin-right: 15%;
-  }
-
-
-
-
-  textarea {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-
-  /*-------------------------------Responsivity----------------------------------*/
-
-  @media (max-width: 800px) {
-    #placeholder{
-      margin: 0;
-    }
-    #menu {
-      margin-left: 0%;
-
-    }
-    .question{
-      line-height: 1;
-      padding-left: 5%;
+    #block{
+        float: left;
+        width: 30%;
     }
 
-    #points{
-      margin-left:20%;
+    .avatarContainer{
+    margin:0;
     }
 
-    .submitbutton {
-      list-style: none;
-      background-color: #0D6EFD;
-      color: white;
-      padding: 14px 20px;
-      margin: 8px 0;
-      border: none;
-      cursor: pointer;
-      width: 100%;
-
-    }
+  .flip-card {
+    width: 200px;
+    height: 200px;
   }
 
-    @media (max-width: 450px) {
-      img{
-          width:200pt;
+  .fcImg{
+    width:200px;
+    height:200px;
+  }
 
-      }
+  .submenu a{
+    font-size:10px;
+    width:58px;
+    padding: 10%;
+  }
+
+  .container1, .container2 {
+  font-size: 12px;
+  }
+
+  .navbar{
+  margin-bottom:-1.5em;
+    font-size: 14px;
+  }
+
+  figcaption{
+    font-size: 12px;
     }
 
+  .headerImg{
+  display:none;
+  }
 
+  .pagination{
+  font-size:12px;
+  padding-bottom: 1em;
+  }
 
-    @media (max-width: 800px) {
+  .box1{
+     font-size:12px;
+  }
 
-        #block{
-            float: left;
-            width: 30%;
-        }
+  .infoList{
+  margin-left:0%;
+  }
+
+  .box3 {
+   padding:1em;
+   font-size:8px;
+  }
+
+  .infoBox{
+  padding-left:45%;
+  }
+
+    ul {
+    margin-left: -4em;
     }
 
+ #imgContainer{
+ margin-top:10%;
+ margin-left:20%
+ }
 
-    @media (max-width: 450px) {
+ .imageAdventure{
+ width:60%;
+ padding:0;
+ }
 
-        #block{
-            float: left;
-            width: 40%;
-        }
-    }
+ .continue{
+ visibility: hidden;
+ }
 
-
-
-
-
+}
 
 
 
