@@ -77,6 +77,15 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
+    },
+
+    'LokiDB': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'LokiDB',
+        'USER': 'postgres',
+        'PASSWORD': '0000',
+        'HOST': '127.0.0.1',
+        'PORT': '5432',
     }
 }
 
@@ -122,5 +131,5 @@ STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
 
 #TO DO: Set to readonly after development
-EXPLORER_CONNECTIONS = { 'Default': 'default' }
-EXPLORER_DEFAULT_CONNECTION = 'default'
+EXPLORER_CONNECTIONS = { 'LokiDB': 'LokiDB' }
+EXPLORER_DEFAULT_CONNECTION = 'LokiDB'

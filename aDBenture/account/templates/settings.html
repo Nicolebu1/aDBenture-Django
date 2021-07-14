@@ -6,37 +6,36 @@
 
 <head>
   <title>Change</title>
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
 
 </head>
 
 <body>
-
-<header>
+  <header>
     <a href = "login">
         <div class="imgcontainer">
       <img src="static/images/policeman.jpg" alt="Avatar" class="policeImg" style="height: 8em; width: 5em;">
         </div>
     </a>
-
     <br>
       <h1>Willkommen bei a<span style="color: #0D6EFD;">DB</span>enture</h1>
-
 
     <a href = "profile" style="text-decoration: none;">
     <figure>
         <img src="static/images/sam_winter_av.png" alt="Avatar" class="profileImgSmall" style="height: 5em; width: 5em;"/>
         <!-- <img src="media/profile_images{{request.user.profile_img }}"  class="avatar" /> -->
-
         <figcaption><center>{{request.user.nick_name}}</center></figcaption>
         <a class="small" href="{% url 'logout' %}"><center>Logout</center></a>
     </figure></a>
 </header>
 
-
-
    <form [formGroup]="form">
     <div class="navbar">
-        <div class="dropdown" style="padding: 1%; color: white;"> Daten ändern
+        <div class="dropdown" style="padding: 1%; color: white;"> Daten ändern:</div>
+        <div>
+            <a class="fa fa-fw fa-home" href = "login"></a>
+            <a class="fa fa-fw fa-user" href = "profile"></a>
+            <a class="fa fa-sign-out" href = "logout"></a>
         </div>
     </div>
        <br>
