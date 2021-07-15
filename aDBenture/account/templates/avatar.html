@@ -21,8 +21,11 @@
 
     <a href = "profile" style="text-decoration: none;">
     <figure>
-        <img src="static/images/sam_winter_av.png" alt="Avatar" class="profileImgSmall" style="height: 5em; width: 5em;"/>
-        <!-- <img src="media/profile_images{{request.user.profile_img }}"  class="avatar" /> -->
+      {% if user.profile_img%}
+        <img src="{{user.profile_img.url}}" alt="Avatar" class="profileImgSmall" style="height: 5em; width: 5em;"/>
+      {% else %}
+      <img src="static/images/default-user.jpg" alt="Avatar" class="profileImgSmall" style="height: 5em; width: 5em;"/>
+      {% endif %}
         <figcaption><center>{{request.user.nick_name}}</center></figcaption>
         <a class="small" href="{% url 'logout' %}"><center>Logout</center></a>
     </figure></a>
@@ -46,154 +49,154 @@
       <!--------------------------------------- Male Avatars ------------------------------------>
       <div id="block">
         <input type="radio" id="1" value="1" name="Avatar" (click)="chooseAvatar(1)">
-        <label for="1"><img src="static/images/AvatarMale01.png"></label>
+        <label for="1"><img class="avatar" src="static/images/AvatarMale01.png"></label>
       </div>
 
       <div id="block">
         <input type="radio" id="2" value="2" name="Avatar" (click)="chooseAvatar(2)">
-        <label for="2"><img src="static/images/AvatarMale02.png"></label>
+        <label for="2"><img class="avatar" src="static/images/AvatarMale02.png"></label>
       </div>
 
       <div id="block">
         <input type="radio" id="3" value="3" name="Avatar" (click)="chooseAvatar(3)">
-        <label for="3"><img src="static/images/AvatarMale03.png"></label>
+        <label for="3"><img class="avatar" src="static/images/AvatarMale03.png"></label>
       </div>
 
       <div id="block">
         <input type="radio" id="4" value="4" name="Avatar" (click)="chooseAvatar(4)">
-        <label for="4"><img src="static/images/AvatarMale04.png"></label>
+        <label for="4"><img class="avatar" src="static/images/AvatarMale04.png"></label>
       </div>
 
       <div id="block">
         <input type="radio" id="5" value="5" name="Avatar" (click)="chooseAvatar(5)">
-        <label for="5"><img src="static/images/AvatarMale05.png"></label>
+        <label for="5"><img class="avatar" src="static/images/AvatarMale05.png"></label>
       </div>
 
       <div id="block">
         <input type="radio" id="6" value="6" name="Avatar" (click)="chooseAvatar(6)">
-        <label for="6"><img src="static/images/AvatarMale06.png"></label>
+        <label for="6"><img class="avatar" src="static/images/AvatarMale06.png"></label>
       </div>
 
       <div id="block">
         <input type="radio" id="7" value="7" name="Avatar" (click)="chooseAvatar(7)">
-        <label for="7"><img src="static/images/AvatarMale07.png"></label>
+        <label for="7"><img class="avatar" src="static/images/AvatarMale07.png"></label>
       </div>
 
       <div id="block">
         <input type="radio" id="8" value="8" name="Avatar" (click)="chooseAvatar(8)">
-        <label for="8"><img src="static/images/AvatarMale08.png"></label>
+        <label for="8"><img class="avatar" src="static/images/AvatarMale08.png"></label>
       </div>
 
       <div id="block">
         <input type="radio" id="9" value="9" name="Avatar" (click)="chooseAvatar(9)">
-        <label for="9"><img src="static/images/AvatarMale09.png"></label>
+        <label for="9"><img class="avatar" src="static/images/AvatarMale09.png"></label>
       </div>
 
       <div id="block">
         <input type="radio" id="10" value="10" name="Avatar" (click)="chooseAvatar(10)">
-        <label for="10"><img src="static/images/AvatarMale10.png"></label>
+        <label for="10"><img class="avatar" src="static/images/AvatarMale10.png"></label>
       </div>
 
       <!-------------------------------------------Female Avatars ------------------------------------------>
       <div id="block">
         <input type="radio" id="11" value="11" name="Avatar" (click)="chooseAvatar(11)">
-        <label for="11"><img src="static/images/AvatarFemale01.png"></label>
+        <label for="11"><img class="avatar" src="static/images/AvatarFemale01.png"></label>
       </div>
 
       <div id="block">
         <input type="radio" id="12" value="12" name="Avatar" (click)="chooseAvatar(12)">
-        <label for="12"><img src="static/images/AvatarFemale02.png"></label>
+        <label for="12"><img class="avatar" src="static/images/AvatarFemale02.png"></label>
       </div>
 
       <div id="block">
         <input type="radio" id="13" value="13" name="Avatar" (click)="chooseAvatar(13)">
-        <label for="13"><img src="static/images/AvatarFemale03.png"></label>
+        <label for="13"><img class="avatar" src="static/images/AvatarFemale03.png"></label>
       </div>
 
       <div id="block">
         <input type="radio" id="14" value="14" name="Avatar" (click)="chooseAvatar(14)">
-        <label for="14"><img src="static/images/AvatarFemale04.png"></label>
+        <label for="14"><img class="avatar" src="static/images/AvatarFemale04.png"></label>
       </div>
 
       <div id="block">
         <input type="radio" id="15" value="15" name="Avatar" (click)="chooseAvatar(15)">
-        <label for="15"><img src="static/images/AvatarFemale05.png"></label>
+        <label for="15"><img class="avatar" src="static/images/AvatarFemale05.png"></label>
       </div>
 
       <div id="block">
         <input type="radio" id="16" value="16" name="Avatar" (click)="chooseAvatar(16)">
-        <label for="16"><img src="static/images/AvatarFemale06.png"></label>
+        <label for="16"><img class="avatar" src="static/images/AvatarFemale06.png"></label>
       </div>
 
       <div id="block">
         <input type="radio" id="17" value="17" name="Avatar" (click)="chooseAvatar(17)">
-        <label for="17"><img src="static/images/AvatarFemale07.png"></label>
+        <label for="17"><img class="avatar" src="static/images/AvatarFemale07.png"></label>
       </div>
 
       <div id="block">
         <input type="radio" id="18" value="18" name="Avatar" (click)="chooseAvatar(18)">
-        <label for="18"><img src="static/images/AvatarFemale08.png"></label>
+        <label for="18"><img class="avatar" src="static/images/AvatarFemale08.png"></label>
       </div>
 
       <div id="block">
         <input type="radio" id="19" value="19" name="Avatar" (click)="chooseAvatar(19)">
-        <label for="19"><img src="static/images/AvatarFemale09.png"></label>
+        <label for="19"><img class="avatar" src="static/images/AvatarFemale09.png"></label>
       </div>
 
       <div id="block">
         <input type="radio" id="20" value="20" name="Avatar" (click)="chooseAvatar(20)">
-        <label for="20"><img src="static/images/AvatarFemale10.png"></label>
+        <label for="20"><img class="avatar" src="static/images/AvatarFemale10.png"></label>
       </div>
 
       <!-------------------------------------------Non-Binary Avatars ------------------------------------------>
       <div id="block">
         <input type="radio" id="21" value="21" name="Avatar" (click)="chooseAvatar(21)">
-        <label for="21"><img src="static/images/AvatarNon01.png"></label>
+        <label for="21"><img class="avatar" src="static/images/AvatarNon01.png"></label>
       </div>
 
       <div id="block">
         <input type="radio" id="22" value="22" name="Avatar" (click)="chooseAvatar(22)">
-        <label for="22"><img src="static/images/AvatarNon02.png"></label>
+        <label for="22"><img class="avatar" src="static/images/AvatarNon02.png"></label>
       </div>
 
       <div id="block">
         <input type="radio" id="23" value="23" name="Avatar" (click)="chooseAvatar(23)">
-        <label for="23"><img src="static/images/AvatarNon03.png"></label>
+        <label for="23"><img class="avatar" src="static/images/AvatarNon03.png"></label>
       </div>
 
       <div id="block">
         <input type="radio" id="24" value="24" name="Avatar" (click)="chooseAvatar(24)">
-        <label for="24"><img src="static/images/AvatarNon04.png"></label>
+        <label for="24"><img class="avatar" src="static/images/AvatarNon04.png"></label>
       </div>
 
       <div id="block">
         <input type="radio" id="25" value="25" name="Avatar" (click)="chooseAvatar(25)">
-        <label for="25"><img src="static/images/AvatarNon05.png"></label>
+        <label for="25"><img class="avatar" src="static/images/AvatarNon05.png"></label>
       </div>
 
       <div id="block">
         <input type="radio" id="26" value="26" name="Avatar" (click)="chooseAvatar(26)">
-        <label for="26"><img src="static/images/AvatarNon06.png"></label>
+        <label for="26"><img class="avatar" src="static/images/AvatarNon06.png"></label>
       </div>
 
       <div id="block">
         <input type="radio" id="27" value="27" name="Avatar" (click)="chooseAvatar(27)">
-        <label for="27"><img src="static/images/AvatarNon07.png"></label>
+        <label for="27"><img class="avatar" src="static/images/AvatarNon07.png"></label>
       </div>
 
       <div id="block">
         <input type="radio" id="28" value="28" name="Avatar" (click)="chooseAvatar(28)">
-        <label for="28"><img src="static/images/AvatarNon08.png"></label>
+        <label for="28"><img class="avatar" src="static/images/AvatarNon08.png"></label>
       </div>
 
       <div id="block">
         <input type="radio" id="29" value="29" name="Avatar" (click)="chooseAvatar(29)">
-        <label for="29"><img src="static/images/AvatarNon09.png"></label>
+        <label for="29"><img class="avatar" src="static/images/AvatarNon09.png"></label>
       </div>
 
       <div id="block">
         <input type="radio" id="30" value="30" name="Avatar" (click)="chooseAvatar(30)">
-        <label for="30"><img src="static/images/AvatarNon10.png"></label>
+        <label for="30"><img class="avatar" src="static/images/AvatarNon10.png"></label>
       </div>
     </div>
 
