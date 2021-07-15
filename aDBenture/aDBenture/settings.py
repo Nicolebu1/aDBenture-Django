@@ -130,6 +130,10 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static_cdn')
 STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
 
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static')
+]
+
 #TO DO: Set to readonly after development
 EXPLORER_CONNECTIONS = { 'LokiDB': 'LokiDB' }
 EXPLORER_DEFAULT_CONNECTION = 'LokiDB'
