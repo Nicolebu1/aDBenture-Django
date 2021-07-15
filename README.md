@@ -3,8 +3,9 @@
 
 <h4> ------------REFERENCES-------------- </h4> 
 
-Registration and login (account-App) (ref: https://github.com/janlemcke) <br>
-Project structure and setup (ref: https://github.com/janlemcke) <br>
+Registration and login (account-App) JAN LEMCKE (ref: https://github.com/janlemcke) <br>
+Project structure and setup JAN LEMCKE (ref: https://github.com/janlemcke) <br>
+SQL Query Editor DJANGO SQL EXPLORER (ref: https://github.com/groveco/django-sql-explorer)
 Password reset links (ref: https://github.com/django/django/blob/master/django/contrib/auth/views.py) <br>
 
 <h4> -------------PACKAGES--------------- </h4>
