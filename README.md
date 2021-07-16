@@ -25,6 +25,9 @@ pip install django-sql-explorer
 POSTGRES <br>
 pip install psycopg2-binary
 
+CELERY <br>
+pip install django-celery
+
 Migrate <br>
 python manage.py migrate
 
