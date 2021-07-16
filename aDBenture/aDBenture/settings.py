@@ -23,7 +23,7 @@ LOGIN_REDIRECT_URL = 'home'
 # Application definition
 INSTALLED_APPS = [
     'account',
-    'game',
+    'explorer',
     'widget_tweaks',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -31,8 +31,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'explorer',
-
 ]
 
 MIDDLEWARE = [
