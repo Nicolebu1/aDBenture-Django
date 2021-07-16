@@ -1,16 +1,79 @@
 {% extends "explorer/base.html" %}
 {% load explorer_tags i18n %}
 
-{% block sql_explorer_navlinks %}
-    {% if can_change %}
-    <li{% if not query %} class="active" {% endif %}><a href="{% url 'query_create' %}">{% trans "New Query" %}</a></li>
-    <li><a href="{% url 'explorer_playground' %}">{% trans "Playground" %}</a></li>
-    {% endif %}
-    {% if query %}<li class="active"><a href="">{% trans "Query Detail" %}</a></li>{% endif %}
-    <li><a href="{% url 'explorer_logs' %}">{% trans "Logs" %}</a></li>
-{% endblock %}
-
 {% block sql_explorer_content %}
+
+
+
+<html>
+<head>
+  <title>Dashboard</title>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+</head>
+
+  <header>
+    <a href = "login">
+        <div class="imgcontainer">
+      <img src="explorer/images/policeman.jpg" alt="Avatar" class="policeImg" style="height: 8em; width: 5em;">
+        </div>
+    </a>
+    <br>
+      <h1>Willkommen bei a<span style="color: #0D6EFD;">DB</span>enture</h1>
+
+    <a href = "profile" style="text-decoration: none;">
+    <figure>
+        <img src="explorer/static/images/sam_winter.png" alt="Avatar" class="profileImgSmall" style="height: 5em; width: 5em;"/>
+        <!-- <img src="media/profile_images{{request.user.profile_img }}"  class="avatar" /> -->
+        <figcaption><center>{{request.user.nick_name}}</center></figcaption>
+        <a class="small" href="{% url 'logout' %}"><center>Logout</center></a>
+    </figure></a>
+</header>
+
+<body>
+    <div class="navbar">
+        <div class="dropdown" style="padding: 1%; color: white;"> Abenteuer: SoKo DB</div>
+      <div>
+            <a class="fa fa-fw fa-home" href = "login"></a>
+            <a class="fa fa-fw fa-user" href = "profile"></a>
+            <a class="fa fa-sign-out" href = "logout"></a>
+        </div>
+    </div>
+
+  <img class="headerImg"src="../static/images/policeHeader.jpg" style="width: 100%;">
+
+    <br>
+
+  <div class="pagination">
+      <a href="adbenturePolice">&laquo;</a>
+      <a class="active" href="game" title="Projektion und Selection">1</a>
+      <a href="game" title="Distinct">2</a>
+      <a href="game" title="Aliasing">3</a>
+      <a href="game" title="Operationen auf Zahlen und Zeichenketten">4</a>
+      <a href="game" title="Mengenoperatoren">5</a>
+      <a href="game" title="Fallunterscheidung">6</a>
+      <a href="game">&raquo;</a>
+    </div>
+
+    <div class="container">
+      <div class="box1">
+        <div id="aufgabe_1" class="aufgabe">
+          <p class="question"><span style="color:#0D6EFD;">Projektion und Selection</span>
+
+            <p> Punkte: 2</p>
+
+            <p style="text-align: justify;"> „Bella“, die geliebte Dalmatinerhündin der Familie Reich wurde entführt. Chefinspektorin Lara
+              Fischer und Chefinspektor Amar Kovač haben die Vermutung, dass es sich bei den Tätern um
+              eine Bande handeln könnte.
+              Um die Verdächtigen einzugrenzen, möchten sie eine duplikatfreie Übersicht über alle Banden
+              erstellen.
+              <br>Wie könnte die SQL Abfrage lauten?</p>
+        </div>
+
+      </div>
+    </div>
+</body>
+
 <div class="row">
     <div id="query_area" class="query-area col-md-12">
         <h2>{% if query %}{{ query.title }}{% if shared %}<small>&nbsp;&nbsp;shared</small>{% endif %}{% else %}{% trans "New Query" %}{% endif %}</h2>
@@ -166,4 +229,5 @@
             {% endif %}
         });
     </script>
+</html>
 {% endblock %}

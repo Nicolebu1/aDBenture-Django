@@ -1,0 +1,10 @@
+
+cWeb:DoctypePresenceCheck":Insert a <!DOCTYPE> declaration to before this <html> tag.(¿µÓ¡øÿÿÿÿ
+NWeb:AvoidCommentedOutCodeCheck"Remove this commented out code.(×§­Éùÿÿÿÿ
+RWeb:UnsupportedTagsInHtml5Check"(Remove this deprecated "center" element.(ºğÖ
+XWeb:UnsupportedTagsInHtml5Check"(Remove this deprecated "center" element.(Ï÷¥ÿÿÿÿÿ
+LWeb:ImgWithoutAltCheck)"%Add an "alt" attribute to this image.(–†µÿÿÿÿÿ
+LWeb:ImgWithoutAltCheck["%Add an "alt" attribute to this image.(äÈ½•şÿÿÿÿ
+LWeb:BoldAndItalicTagsChecki"!Replace this <b> tag by <strong>.(ŸÕˆışÿÿÿÿ
+LWeb:BoldAndItalicTagsChecks"!Replace this <b> tag by <strong>.(Ö€»Ûÿÿÿÿÿ
+MWeb:BoldAndItalicTagsCheck†"!Replace this <b> tag by <strong>.(²´€ûÿÿÿÿ

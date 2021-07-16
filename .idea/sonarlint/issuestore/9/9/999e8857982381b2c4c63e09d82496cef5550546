@@ -1,0 +1,21 @@
+
+m%Web:ItemTagNotWithinContainerTagCheck"<Surround this <li> item tag by a <ul> or <ol> container one.(Â°ûË
+r%Web:ItemTagNotWithinContainerTagCheck"<Surround this <li> item tag by a <ul> or <ol> container one.(Öª¬ıÿÿÿÿ
+r%Web:ItemTagNotWithinContainerTagCheck"<Surround this <li> item tag by a <ul> or <ol> container one.(¨ÁÓÑÿÿÿÿÿ
+GWeb:TableWithoutCaptionCheck" Add a description to this table.(íÊğ2
+l Web:TableHeaderHasIdOrScopeCheck";Add either an 'id' or a 'scope' attribute to this <th> tag.(ç±»‰ÿÿÿÿÿ
+g Web:TableHeaderHasIdOrScopeCheck";Add either an 'id' or a 'scope' attribute to this <th> tag.(“âÌ
+g Web:TableHeaderHasIdOrScopeCheck";Add either an 'id' or a 'scope' attribute to this <th> tag.(ó¾î÷
+CWeb:BoldAndItalicTagsCheck"Replace this <i> tag by <em>.(ê±÷ô
+GWeb:TableWithoutCaptionCheck." Add a description to this table.(íÊğ2
+l Web:TableHeaderHasIdOrScopeCheck1";Add either an 'id' or a 'scope' attribute to this <th> tag.(ºÑ›ıÿÿÿÿ
+l Web:TableHeaderHasIdOrScopeCheck2";Add either an 'id' or a 'scope' attribute to this <th> tag.(ÇªÖÆıÿÿÿÿ
+g Web:TableHeaderHasIdOrScopeCheck4";Add either an 'id' or a 'scope' attribute to this <th> tag.(âÅŞû
+f Web:TableHeaderHasIdOrScopeCheck6";Add either an 'id' or a 'scope' attribute to this <th> tag.(Ç»É"
+g Web:TableHeaderHasIdOrScopeCheck8";Add either an 'id' or a 'scope' attribute to this <th> tag.(“›•å
+l Web:TableHeaderHasIdOrScopeCheck9";Add either an 'id' or a 'scope' attribute to this <th> tag.(¬±‚­ùÿÿÿÿ
+l Web:TableHeaderHasIdOrScopeCheck;";Add either an 'id' or a 'scope' attribute to this <th> tag.(Â¨¸çûÿÿÿÿ
+HWeb:BoldAndItalicTagsCheckT"Replace this <i> tag by <em>.(±î€•ÿÿÿÿÿ
+HWeb:BoldAndItalicTagsCheckX"Replace this <i> tag by <em>.(©ö€ëüÿÿÿÿ
+CWeb:BoldAndItalicTagsCheck\"Replace this <i> tag by <em>.(®ªÅÂ
+CWeb:BoldAndItalicTagsCheck_"Replace this <i> tag by <em>.(‘ñÊÑ

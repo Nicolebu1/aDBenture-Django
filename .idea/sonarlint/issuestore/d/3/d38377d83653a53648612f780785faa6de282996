@@ -1,0 +1,13 @@
+
+jWeb:DoctypePresenceCheck":Insert a <!DOCTYPE> declaration to before this <html> tag.(œ÷Ãûÿÿÿÿ8á¹ÿª/
+a	Web:S5254"@Add "lang" and/or "xml:lang" attributes to this "<html>" element(œ÷Ãûÿÿÿÿ8á¹ÿª/
+UWeb:AvoidCommentedOutCodeCheck"Remove this commented out code.(×§­Éùÿÿÿÿ8ÅÂ—…«/
+YWeb:UnsupportedTagsInHtml5Check"(Remove this deprecated "center" element.(ºğÖ8ÅÂ—…«/
+_Web:UnsupportedTagsInHtml5Check"(Remove this deprecated "center" element.(Ï÷¥ÿÿÿÿÿ8ÅÂ—…«/
+SWeb:ImgWithoutAltCheck+"%Add an "alt" attribute to this image.(–†µÿÿÿÿÿ8ÅÂ—…«/
+KWeb:BoldAndItalicTagsCheck"Replace this <i> tag by <em>.(­ÆêÚ8ÅÂ—…«/
+PWeb:BoldAndItalicTagsCheck"Replace this <i> tag by <em>.(·ãÎ±şÿÿÿÿ8ÅÂ—…«/
+L	Web:S1827À"/Remove this deprecated "frameBorder" attribute.(×ääæ8ÆÂ—…«/
+[Web:FrameWithoutTitleCheckÀ"-Add a "title" attribute to this <iframe> tag.(×ääæ8ÆÂ—…«/
+`	Web:S5255Z"DAdd an "aria-label" or "aria-labbelledby" attribute to this element.(»¯œ¥8‡ë«…«/
+_	Web:S5255\"DAdd an "aria-label" or "aria-labbelledby" attribute to this element.(Ê¼Ñd8ˆë«…«/
