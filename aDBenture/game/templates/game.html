@@ -10,22 +10,21 @@
 </head>
 
 <body>
-      <header>
-    <a href = "../login">
+  <header>
+    <a href = "login">
         <div class="imgcontainer">
-      <img src="/static/images/policeman.jpg" alt="Avatar" class="policeImg">
-
+      <img src="static/images/policeman.jpg" alt="Avatar" class="policeImg" style="height: 8em; width: 5em;">
         </div>
     </a>
     <br>
       <h1>Willkommen bei a<span style="color: #0D6EFD;">DB</span>enture</h1>
 
-    <a href = "../profile" style="text-decoration: none;">
+    <a href = "profile" style="text-decoration: none;">
     <figure>
       {% if user.profile_img%}
-        <img src="{{user.profile_img.url}}" alt="Avatar" class="profileImgSmall"/>
+        <img src="{{user.profile_img.url}}" alt="Avatar" class="profileImgSmall" style="height: 5em; width: 5em;"/>
       {% else %}
-      <img src="static/images/default-user.jpg" alt="Avatar" class="profileImgSmall"/>
+      <img src="static/images/default-user.jpg" alt="Avatar" class="profileImgSmall" style="height: 5em; width: 5em;"/>
       {% endif %}
         <figcaption><center>{{request.user.nick_name}}</center></figcaption>
         <a class="small" href="{% url 'logout' %}"><center>Logout</center></a>
@@ -42,7 +41,7 @@
         </div>
     </div>
 
-  <img class="headerImg"src="../static/images/policeHeader.jpg" style="width: 100%;">
+  <img class="headerImg"src="static/images/policeHeader.jpg" style="width: 100%;">
 
     <br>
 

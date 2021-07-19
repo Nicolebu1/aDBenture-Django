@@ -1,5 +1,15 @@
 {% extends "explorer/base.html" %}
 {% load explorer_tags i18n %}
+{% block sql_explorer_content %}
+
+<html>
+<head>
+  <title>Dashboard</title>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+</head>
+{% extends "explorer/base.html" %}
+{% load explorer_tags i18n %}
 
 {% block sql_explorer_content %}
 
@@ -12,10 +22,13 @@
   <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
 </head>
 
-  <header>
+<body>
+
+<header>
     <a href = "../../login">
         <div class="imgcontainer">
-      <img src="/static/images/policeman.jpg" alt="Avatar" class="policeImg" style="height: 8em; width: 5em;">
+      <img src="/static/images/policeman.jpg" alt="Avatar" class="policeImg">
+
         </div>
     </a>
     <br>
@@ -23,44 +36,35 @@
 
     <a href = "../../profile" style="text-decoration: none;">
     <figure>
-        <img src="/static/images/sam_winter.png" alt="Avatar" class="profileImgSmall" style="height: 5em; width: 5em;"/>
-        <!-- <img src="media/profile_images{{request.user.profile_img }}"  class="avatar" /> -->
+      {% if user.profile_img%}
+        <img src="{{user.profile_img.url}}" alt="Avatar" class="profileImgSmall"/>
+      {% else %}
+      <img src="static/images/default-user.jpg" alt="Avatar" class="profileImgSmall"/>
+      {% endif %}
         <figcaption><center>{{request.user.nick_name}}</center></figcaption>
         <a class="small" href="{% url 'logout' %}"><center>Logout</center></a>
     </figure></a>
 </header>
 
-<body>
+<form>
     <div class="navbar">
-        <div class="dropdown" style="padding: 1%; color: white;"> Abenteuer: SoKo DB</div>
-      <div>
-             <a class="fa fa-fw fa-home" href="../../login"></a>
-            <a class="fa fa-fw fa-user" href="../../profile"></a>
-            <a class="fa fa-sign-out" href="../../logout"></a>
-        </div>
+        <div class="dropdown" style="padding: 1%; color: white;">Abenteuer Soko DB:</div>
+        <div>
+              <a class="fa fa-fw fa-home" href = "../../login"></a>
+              <a class="fa fa-fw fa-user" href = "../../profile"></a>
+              <a class="fa fa-sign-out" href = "../../logout"></a>
+          </div>
     </div>
 
   <img class="headerImg"src="/static/images/policeHeader.jpg" style="width: 100%;">
 
     <br>
-
-  <!--
-    <div class="pagination">
-      <a href="adbenturePolice">&laquo;</a>
-      <a class="active" href="game" title="Projektion und Selection">1</a>
-      <a href="game" title="Distinct">2</a>
-      <a href="game" title="Aliasing">3</a>
-      <a href="game" title="Operationen auf Zahlen und Zeichenketten">4</a>
-      <a href="game" title="Mengenoperatoren">5</a>
-      <a href="game" title="Fallunterscheidung">6</a>
-      <a href="game">&raquo;</a>
-    </div>
-    -->
+     <br>
 
     <div class="container">
       <div class="box1">
         <div id="aufgabe_1" class="aufgabe">
-          <p class="question"><span style="color:#0D6EFD;">Projektion und Selection</span>
+          <p class="question"><span style="color:#0D6EFD; font-size:20px;">Projektion und Selection</span>
             <br>
             <p style="text-align: justify;"> „Bella“, die geliebte Dalmatinerhündin der Familie Reich wurde entführt. Chefinspektorin Lara
               Fischer und Chefinspektor Amar Kovač haben die Vermutung, dass es sich bei den Tätern um
@@ -73,10 +77,12 @@
         </div>
       </div>
     </div>
+</form>
 </body>
 
 <div class="row">
-    <div id="query_area" class="query-area col-md-12">
+    <div id="query_area" class="query-area col-md-8">
+
         {% if message %}
             <div class="alert alert-info">{{ message }}</div>
         {% endif %}
@@ -97,7 +103,8 @@
                     {% endfor %}{% endif %}
 
                     <label for="id_title" class="col-sm-2 control-label"></label>
-                    <div class="col-sm-10" style="display: none">
+
+                    <div class="col-sm-8" >
                        <input class="form-control" id="id_title" name="title" {% if not can_change %}disabled{% endif %} value="{{ form.title.value|default_if_none:"0" }}" />
                     </div>
                   {% if form.connections|length > 1 and can_change %}
@@ -143,19 +150,19 @@
                                 <span class="caret"></span>
                                 <span class="sr-only">{% trans "Toggle Dropdown" %}</span>
                               </button>
-                              <ul class="dropdown-menu">
                                 {% export_buttons query %}
                               </ul>
-                            </div>
                         {% endif %}
-                    </div>
+                            </div>
+                              <ul class="dropdown-menu">
                 </div>
+                    </div>
 
-            </form>
         </div>
+    <div id="schema" style="display: none;" >
+        <iframe src=""  style=" width: 650px; height: 700px; overflow:hidden;" id="schema_frame"></iframe>
     </div>
-    <div id="schema" style="display: none;">
-        <iframe src="" style="transform-origin: 0px 0px 0px; transform: scale(0.8); width: 700px; height: 700px;" id="schema_frame"></iframe>
+
     </div>
 </div>
 {% include 'explorer/preview_pane.html' %}
@@ -165,8 +172,8 @@
       {{ form.snapshot }} Snapshot
     {% endif %}
   </div>
-</div>
 {% endblock %}
+</div>
 
 {% block sql_explorer_scripts %}
     <script>
@@ -185,8 +192,8 @@
             })
             {% if query %}
                 $('.panel-content').hide();
-            {% endif %}
         });
-    </script>
 </html>
 {% endblock %}
+    </script>
+            {% endif %}
