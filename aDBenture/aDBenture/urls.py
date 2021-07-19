@@ -8,7 +8,7 @@ from aDBenture import settings
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('account.urls')),
-    path('', include('game.urls')),
+    # path('game/', include('game.urls')),
     path('explorer/', include('explorer.urls')),
 ]
 
