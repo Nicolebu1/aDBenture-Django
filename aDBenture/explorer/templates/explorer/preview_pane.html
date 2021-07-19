@@ -4,24 +4,19 @@
     <div class="row">
         <div class="col-md-12">
             <div role="tabpanel">
-                <ul class="nav nav-tabs" role="tablist">
-                    <li role="presentation" class="active"><a href="#previewpane" aria-controls="previewpane" role="tab" data-toggle="tab" id="preview-tab-label">{% trans "Preview" %}</a></li>
-                    {% if query.id and query.snapshot %}<li role="presentation"><a href="#snapshots" aria-controls="snapshots" role="tab" data-toggle="tab">{% trans "Snapshots" %}</a></li>{% endif %}
-                    {% if data %}<li role="presentation"><a href="#pivot" aria-controls="pivot" role="tab" data-toggle="tab" id="pivot-tab-label">{% trans "Pivot" %}</a></li>{% endif %}
-                </ul>
                 <div class="tab-content">
                     <div role="tabpanel" class="tab-pane active" id="previewpane">
                         <div class="panel panel-default">
                             <div class="panel-heading">
                               <div class="row">
                                 <div class="col-md-6">
-                                  {% if data %}<a title="Show row numbers" id="counter-toggle" href="#">#</a>&nbsp;{% endif %}
-                                  <span class="panel-title">{% blocktrans with duration=duration|floatformat:2 %}Execution time: {{ duration }} ms{% endblocktrans %}</span>
+                                  {% if data %}<a title="Show row numbers" id="counter-toggle" href="#">Anzahl Ergebniszeilen: </a>&nbsp;{% endif %}
+
                                 </div>
                                 <div class="col-md-6 text-right">
                                   <span class="row-control">
                                       {% if rows > total_rows %}
-                                          Showing <input class="rows-input" type="text" name="rows" id="rows" value="{{ total_rows }}" />
+                                          <input class="rows-input" type="text" name="rows" id="rows" value="{{ total_rows }}" />
                                       {% else %}
                                           First <input class="rows-input" type="text" name="rows" id="rows" value="{{ rows }}" />
                                       {% endif %}
@@ -103,25 +98,6 @@
                             </div>
                         </div>
                     {% endif %}
-                    {% if data %}
-                      <div role="tabpanel" class="tab-pane" id="pivot">
-                        <div class="panel panel-default">
-                          <div class="panel-heading">
-                            <div class="row">
-                              <div class="col-md-6">
-                                <span class="panel-title">Pivot</span>
-                              </div>
-                              <div class="col-md-6 text-right">
-                                <small><a id="pivot-bookmark" data-baseurl="{% url 'explorer_playground' %}?querylog_id={{ ql_id }}" href="#"><i class="glyphicon glyphicon-link"></i></a></small>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="overflow-wrapper">
-                            <div class="pivot-table"></div>
-                          </div>
-                        </div>
-                      </div>
-                  {% endif %}
                 </div>
             </div>
         </div>
