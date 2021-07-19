@@ -1,0 +1,4 @@
+
+*.pyc
+
+aDBenture/aDBenture/__pycache__/

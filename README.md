@@ -5,7 +5,7 @@
 
 Registration and login (account-App) JAN LEMCKE (ref: https://github.com/janlemcke) <br>
 Project structure and setup JAN LEMCKE (ref: https://github.com/janlemcke) <br>
-SQL Query Editor DJANGO SQL EXPLORER (ref: https://github.com/groveco/django-sql-explorer)
+SQL Query Editor DJANGO SQL EXPLORER (ref: https://github.com/groveco/django-sql-explorer) <br>
 Password reset links (ref: https://github.com/django/django/blob/master/django/contrib/auth/views.py) <br>
 
 <h4> -------------PACKAGES--------------- </h4>
@@ -24,6 +24,9 @@ pip install django-sql-explorer
 
 POSTGRES <br>
 pip install psycopg2-binary
+
+CELERY <br>
+pip install django-celery
 
 Migrate <br>
 python manage.py migrate
