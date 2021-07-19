@@ -1,0 +1,188 @@
+{% extends "explorer/base.html" %}
+{% load explorer_tags i18n %}
+
+{% block sql_explorer_content %}
+
+
+
+<html>
+<head>
+  <title>Dashboard</title>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+</head>
+
+<body>
+
+<header>
+    <a href = "../../login">
+        <div class="imgcontainer">
+      <img src="/static/images/policeman.jpg" alt="Avatar" class="policeImg">
+
+        </div>
+    </a>
+    <br>
+      <h1>Willkommen bei a<span style="color: #0D6EFD;">DB</span>enture</h1>
+
+    <a href = "../../profile" style="text-decoration: none;">
+    <figure>
+      {% if user.profile_img%}
+        <img src="{{user.profile_img.url}}" alt="Avatar" class="profileImgSmall"/>
+      {% else %}
+      <img src="static/images/default-user.jpg" alt="Avatar" class="profileImgSmall"/>
+      {% endif %}
+        <figcaption><center>{{request.user.nick_name}}</center></figcaption>
+        <a class="small" href="{% url 'logout' %}"><center>Logout</center></a>
+    </figure></a>
+</header>
+
+<form>
+    <div class="navbar">
+        <div class="dropdown" style="padding: 1%; color: white;">Abenteuer Soko DB:</div>
+        <div>
+              <a class="fa fa-fw fa-home" href = "../../login"></a>
+              <a class="fa fa-fw fa-user" href = "../../profile"></a>
+              <a class="fa fa-sign-out" href = "../../logout"></a>
+          </div>
+    </div>
+
+  <img class="headerImg"src="/static/images/policeHeader.jpg" style="width: 100%;">
+
+    <br>
+     <br>
+
+    <div class="container">
+      <div class="box1">
+        <div id="aufgabe_1" class="aufgabe">
+          <p class="question"><span style="color:#0D6EFD; font-size:20px;">Projektion und Selection</span>
+            <br>
+            <p style="text-align: justify;"> „Bella“, die geliebte Dalmatinerhündin der Familie Reich wurde entführt. Chefinspektorin Lara
+              Fischer und Chefinspektor Amar Kovač haben die Vermutung, dass es sich bei den Tätern um
+              eine Bande handeln könnte.
+              Um die Verdächtigen einzugrenzen, möchten sie eine duplikatfreie Übersicht über alle Banden
+              erstellen.
+              <br>Wie könnte die SQL Abfrage lauten?</p>
+                <br>
+                <br>
+        </div>
+      </div>
+    </div>
+</form>
+</body>
+
+<div class="row">
+    <div id="query_area" class="query-area col-md-8">
+
+        {% if message %}
+            <div class="alert alert-info">{{ message }}</div>
+        {% endif %}
+        <div>
+            {% if query %}
+                <form role="form" class="form-horizontal" action="{% url 'query_detail' query.id %}" method="post" id="editor">{% csrf_token %}
+            {% else %}
+                <form role="form" class="form-horizontal" action="{% url 'query_create' %}" method="post" id="editor">{% csrf_token %}
+            {% endif %}
+
+                {% if error %}
+                    <div class="alert alert-danger">{{ error|escape }}</div>
+                {% endif %}
+                {{ form.non_field_errors }}
+                <div class="form-group">
+                    {% if form.title.errors %}{% for error in form.title.errors %}
+                        <div class="alert alert-danger">{{ error|escape }}</div>
+                    {% endfor %}{% endif %}
+
+                    <label for="id_title" class="col-sm-2 control-label"></label>
+
+                    <div class="col-sm-8" >
+                       <input class="form-control" id="id_title" name="title" {% if not can_change %}disabled{% endif %} value="{{ form.title.value|default_if_none:"0" }}" />
+                    </div>
+                  {% if form.connections|length > 1 and can_change %}
+                    </div>
+                    <div class="form-group">
+                      <label for="id_connection" class="col-sm-2 control-label">{% trans "Connection" %}</label>
+                      <div class="col-sm-10">
+                        {{ form.connection }}
+                      </div>
+                  {% else %}
+                    {# still need to submit the connection, just hide the UI element #}
+                    <div class="hidden">
+                      {{ form.connection }}
+                    </div>
+                  {% endif %}
+                </div>
+                <input type="hidden" id="id_created_by_user" name="created_by_user" value="{{ form.created_by_user_email }}" />
+                {% if form.sql.errors %}{% for error in form.sql.errors %}
+                    <div class="alert alert-danger">{{ error|escape }}</div>
+                {% endfor %}{% endif %}
+                <div class="panel panel-default sql-panel">
+                    <div class="panel-content">
+                        <textarea class="form-control" {% if not can_change %} disabled {% endif %} cols="40" id="id_sql" name="sql" rows="20">{{ form.sql.value|default_if_none:"" }}</textarea>
+                    </div>
+                    {% if params %}
+                      {% include 'explorer/params.html' %}
+                    {% endif %}
+                </div>
+                <div class="form-group">
+                    <div class="text-center">
+                        {% if can_change %}
+                            <div class="btn-group">
+                              <input type="submit" value="{% trans 'Überprüfen' %}" class="btn btn-primary" id="save_button" />
+                            </div>
+                            <button type="button" class="btn btn-default" id="show_schema_button">{% trans "Show Schema" %}</button>
+                            <button type="button" class="btn btn-default" id="hide_schema_button" style="display: none;">{% trans "Hide Schema" %}</button>
+                        {% else %}
+                            <input type="submit" value="{% trans 'Refresh' %}" class="btn btn-default" id="refresh_button" />
+                            <div class="btn-group">
+                              <label class="btn btn-default" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{% trans "Download" %}</label>
+                              <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class="caret"></span>
+                                <span class="sr-only">{% trans "Toggle Dropdown" %}</span>
+                              </button>
+                              <ul class="dropdown-menu">
+                                {% export_buttons query %}
+                              </ul>
+                            </div>
+                        {% endif %}
+                    </div>
+                </div>
+
+
+        </div>
+    </div>
+    <div id="schema" style="display: none;" >
+        <iframe src=""  style=" width: 650px; height: 700px; overflow:hidden;" id="schema_frame"></iframe>
+    </div>
+</div>
+{% include 'explorer/preview_pane.html' %}
+<div class="row">
+  <div class="col-md-6">
+    {% if query and can_change and tasks_enabled %}
+      {{ form.snapshot }} Snapshot
+    {% endif %}
+  </div>
+</div>
+{% endblock %}
+
+{% block sql_explorer_scripts %}
+    <script>
+        $(function() {
+            var e = new ExplorerEditor(queryId);
+
+            $('#sql_toggle').on('click', function () {
+                $('.panel-content').slideToggle('slow');
+
+                if ($(this).hasClass('glyphicon-resize-full')) {
+                    $(this).addClass('glyphicon-resize-small').removeClass('glyphicon-resize-full');
+                } else {
+                    $(this).addClass('glyphicon-resize-full').removeClass('glyphicon-resize-small');
+                }
+
+            })
+            {% if query %}
+                $('.panel-content').hide();
+            {% endif %}
+        });
+    </script>
+</html>
+{% endblock %}
