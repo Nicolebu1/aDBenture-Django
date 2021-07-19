@@ -10,19 +10,23 @@
 </head>
 
 <body>
-  <header>
-    <a href = "login">
+      <header>
+    <a href = "../login">
         <div class="imgcontainer">
-      <img src="../static/images/policeman.jpg" alt="Avatar" class="policeImg" style="height: 8em; width: 5em;">
+      <img src="/static/images/policeman.jpg" alt="Avatar" class="policeImg">
+
         </div>
     </a>
     <br>
       <h1>Willkommen bei a<span style="color: #0D6EFD;">DB</span>enture</h1>
 
-    <a href = "profile" style="text-decoration: none;">
+    <a href = "../profile" style="text-decoration: none;">
     <figure>
-        <img src="../static/images/sam_winter_av.png" alt="Avatar" class="profileImgSmall" style="height: 5em; width: 5em;"/>
-        <!-- <img src="media/profile_images{{request.user.profile_img }}"  class="avatar" /> -->
+      {% if user.profile_img%}
+        <img src="{{user.profile_img.url}}" alt="Avatar" class="profileImgSmall"/>
+      {% else %}
+      <img src="static/images/default-user.jpg" alt="Avatar" class="profileImgSmall"/>
+      {% endif %}
         <figcaption><center>{{request.user.nick_name}}</center></figcaption>
         <a class="small" href="{% url 'logout' %}"><center>Logout</center></a>
     </figure></a>

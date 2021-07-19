@@ -1,5 +1,15 @@
 {% extends "explorer/base.html" %}
 {% load explorer_tags i18n %}
+{% block sql_explorer_content %}
+
+<html>
+<head>
+  <title>Dashboard</title>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+</head>
+{% extends "explorer/base.html" %}
+{% load explorer_tags i18n %}
 
 {% block sql_explorer_content %}
 
@@ -12,76 +22,67 @@
   <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
 </head>
 
-  <header>
-    <a href = "login">
+<body>
+
+<header>
+    <a href = "../../login">
         <div class="imgcontainer">
-      <img src="explorer/images/policeman.jpg" alt="Avatar" class="policeImg" style="height: 8em; width: 5em;">
+      <img src="/static/images/policeman.jpg" alt="Avatar" class="policeImg">
+
         </div>
     </a>
     <br>
       <h1>Willkommen bei a<span style="color: #0D6EFD;">DB</span>enture</h1>
 
-    <a href = "profile" style="text-decoration: none;">
+    <a href = "../../profile" style="text-decoration: none;">
     <figure>
-        <img src="explorer/static/images/sam_winter.png" alt="Avatar" class="profileImgSmall" style="height: 5em; width: 5em;"/>
-        <!-- <img src="media/profile_images{{request.user.profile_img }}"  class="avatar" /> -->
+      {% if user.profile_img%}
+        <img src="{{user.profile_img.url}}" alt="Avatar" class="profileImgSmall"/>
+      {% else %}
+      <img src="static/images/default-user.jpg" alt="Avatar" class="profileImgSmall"/>
+      {% endif %}
         <figcaption><center>{{request.user.nick_name}}</center></figcaption>
         <a class="small" href="{% url 'logout' %}"><center>Logout</center></a>
     </figure></a>
 </header>
 
-<body>
+<form>
     <div class="navbar">
-        <div class="dropdown" style="padding: 1%; color: white;"> Abenteuer: SoKo DB</div>
-      <div>
-            <a class="fa fa-fw fa-home" href = "login"></a>
-            <a class="fa fa-fw fa-user" href = "profile"></a>
-            <a class="fa fa-sign-out" href = "logout"></a>
-        </div>
+        <div class="dropdown" style="padding: 1%; color: white;">Abenteuer Soko DB:</div>
+        <div>
+              <a class="fa fa-fw fa-home" href = "../../login"></a>
+              <a class="fa fa-fw fa-user" href = "../../profile"></a>
+              <a class="fa fa-sign-out" href = "../../logout"></a>
+          </div>
     </div>
 
-  <img class="headerImg"src="../static/images/policeHeader.jpg" style="width: 100%;">
+  <img class="headerImg"src="/static/images/policeHeader.jpg" style="width: 100%;">
 
     <br>
-
-  <div class="pagination">
-      <a href="adbenturePolice">&laquo;</a>
-      <a class="active" href="game" title="Projektion und Selection">1</a>
-      <a href="game" title="Distinct">2</a>
-      <a href="game" title="Aliasing">3</a>
-      <a href="game" title="Operationen auf Zahlen und Zeichenketten">4</a>
-      <a href="game" title="Mengenoperatoren">5</a>
-      <a href="game" title="Fallunterscheidung">6</a>
-      <a href="game">&raquo;</a>
-    </div>
+     <br>
 
     <div class="container">
       <div class="box1">
         <div id="aufgabe_1" class="aufgabe">
-          <p class="question"><span style="color:#0D6EFD;">Projektion und Selection</span>
-
-            <p> Punkte: 2</p>
-
+          <p class="question"><span style="color:#0D6EFD; font-size:20px;">Projektion und Selection</span>
+            <br>
             <p style="text-align: justify;"> „Bella“, die geliebte Dalmatinerhündin der Familie Reich wurde entführt. Chefinspektorin Lara
               Fischer und Chefinspektor Amar Kovač haben die Vermutung, dass es sich bei den Tätern um
               eine Bande handeln könnte.
               Um die Verdächtigen einzugrenzen, möchten sie eine duplikatfreie Übersicht über alle Banden
               erstellen.
               <br>Wie könnte die SQL Abfrage lauten?</p>
+                <br>
+                <br>
         </div>
-
       </div>
     </div>
+</form>
 </body>
 
 <div class="row">
-    <div id="query_area" class="query-area col-md-12">
-        <h2>{% if query %}{{ query.title }}{% if shared %}<small>&nbsp;&nbsp;shared</small>{% endif %}{% else %}{% trans "New Query" %}{% endif %}</h2>
-        {% if query %}
-            <div class="text-right">
-                <a href="{% url 'explorer_logs' %}?query_id={{ query.id }}"><h2 class="small">{% trans "History" %}</h2></a>
-            </div>
-        {% endif %}
+    <div id="query_area" class="query-area col-md-8">
+
         {% if message %}
             <div class="alert alert-info">{{ message }}</div>
         {% endif %}
@@ -91,6 +92,7 @@
             {% else %}
                 <form role="form" class="form-horizontal" action="{% url 'query_create' %}" method="post" id="editor">{% csrf_token %}
             {% endif %}
+
                 {% if error %}
                     <div class="alert alert-danger">{{ error|escape }}</div>
                 {% endif %}
@@ -99,9 +101,11 @@
                     {% if form.title.errors %}{% for error in form.title.errors %}
                         <div class="alert alert-danger">{{ error|escape }}</div>
                     {% endfor %}{% endif %}
-                    <label for="id_title" class="col-sm-2 control-label">Title</label>
-                    <div class="col-sm-10">
-                        <input class="form-control" id="id_title" maxlength="255" name="title" type="text" {% if not can_change %}disabled{% endif %} value="{{ form.title.value|default_if_none:"" }}" />
+
+                    <label for="id_title" class="col-sm-2 control-label"></label>
+
+                    <div class="col-sm-8" >
+                       <input class="form-control" id="id_title" name="title" {% if not can_change %}disabled{% endif %} value="{{ form.title.value|default_if_none:"0" }}" />
                     </div>
                   {% if form.connections|length > 1 and can_change %}
                     </div>
@@ -117,33 +121,11 @@
                     </div>
                   {% endif %}
                 </div>
-                <div class="form-group">
-                    {% if form.description.errors %}
-                        <div class="alert alert-danger">{{ form.description.errors }}</div>
-                    {% endif %}
-                    <label for="id_description" class="col-sm-2 control-label">{% trans "Description"%}</label>
-                    <div class="col-sm-10">
-                        <textarea class="form-control" cols="40" id="id_description" name="description" {% if not can_change %}disabled{% endif %} rows="2">{{ form.description.value|default_if_none:"" }}</textarea>
-                    </div>
-                </div>
                 <input type="hidden" id="id_created_by_user" name="created_by_user" value="{{ form.created_by_user_email }}" />
                 {% if form.sql.errors %}{% for error in form.sql.errors %}
                     <div class="alert alert-danger">{{ error|escape }}</div>
                 {% endfor %}{% endif %}
                 <div class="panel panel-default sql-panel">
-                    <div class="panel-heading">
-                      <div class="row">
-                        <div class="col-md-6">
-                          <span class="panel-title">SQL</span>
-                        </div>
-                        <div class="col-md-6 text-right">
-                          {% if query %}
-                              <small><a href="#" title="Open in playground" id="playground_button"><i class="glyphicon glyphicon-new-window"></i></a></small>
-                              <small><i id="sql_toggle" class="glyphicon glyphicon-resize-full"></i></small>
-                          {% endif %}
-                        </div>
-                      </div>
-                    </div>
                     <div class="panel-content">
                         <textarea class="form-control" {% if not can_change %} disabled {% endif %} cols="40" id="id_sql" name="sql" rows="20">{{ form.sql.value|default_if_none:"" }}</textarea>
                     </div>
@@ -155,20 +137,11 @@
                     <div class="text-center">
                         {% if can_change %}
                             <div class="btn-group">
-                              <input type="submit" value="{% trans 'Save & Run' %}" class="btn btn-primary" id="save_button" />
-                              <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="caret"></span>
-                                <span class="sr-only">{% trans "Toggle Dropdown" %}</span>
-                              </button>
-                              <ul class="dropdown-menu">
-                                {% export_buttons query %}
-                                <li role="separator" class="divider"></li>
-                                <li><input type="submit" value="{% trans 'Save Only' %}" class="btn btn-link" id="save_only"/></li>
-                              </ul>
+                              <input type="submit" value="{% trans 'Überprüfen' %}" class="btn btn-primary" id="save_button" />
                             </div>
-                            <button type="button" class="btn btn-default" id="format_button">{% trans "Format" %}</button>
                             <button type="button" class="btn btn-default" id="show_schema_button">{% trans "Show Schema" %}</button>
                             <button type="button" class="btn btn-default" id="hide_schema_button" style="display: none;">{% trans "Hide Schema" %}</button>
+                            <a href ="/explorer/new" type = "button" class="btn btn-default">Neue Abfrage</a>
                         {% else %}
                             <input type="submit" value="{% trans 'Refresh' %}" class="btn btn-default" id="refresh_button" />
                             <div class="btn-group">
@@ -177,19 +150,19 @@
                                 <span class="caret"></span>
                                 <span class="sr-only">{% trans "Toggle Dropdown" %}</span>
                               </button>
-                              <ul class="dropdown-menu">
                                 {% export_buttons query %}
                               </ul>
-                            </div>
                         {% endif %}
-                    </div>
+                            </div>
+                              <ul class="dropdown-menu">
                 </div>
+                    </div>
 
-            </form>
         </div>
+    <div id="schema" style="display: none;" >
+        <iframe src=""  style=" width: 650px; height: 700px; overflow:hidden;" id="schema_frame"></iframe>
     </div>
-    <div id="schema" style="display: none;">
-        <iframe src="" height="828px" frameBorder="0" id="schema_frame"></iframe>
+
     </div>
 </div>
 {% include 'explorer/preview_pane.html' %}
@@ -199,15 +172,8 @@
       {{ form.snapshot }} Snapshot
     {% endif %}
   </div>
-  <div class="col-md-6 text-right">
-    <small>
-      {% if query.avg_duration %}
-        Avg. execution: {{ query.avg_duration|floatformat:2 }}ms. Query created by {{ form.created_by_user_email }} on {{ form.created_at_time }}.
-      {% endif %}
-    </small>
-  </div>
-</div>
 {% endblock %}
+</div>
 
 {% block sql_explorer_scripts %}
     <script>
@@ -226,8 +192,8 @@
             })
             {% if query %}
                 $('.panel-content').hide();
-            {% endif %}
         });
-    </script>
 </html>
 {% endblock %}
+    </script>
+            {% endif %}

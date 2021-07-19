@@ -3,8 +3,10 @@
 
 
 {% block sql_explorer_content_takeover %}
-<div class="schema-wrapper">
+<html>
+<div class="schema-wrapper"  style="width:50%; margin-right40%;">
     <h4 class="text-center">Schema</h4>
+
     <div id="tables">
         <p class="text-center">
           <input class="search" placeholder="Search" />
@@ -25,15 +27,15 @@
                             <h4 class="name panel-title" style="display: inline-block">{{ m.0 }}</h4>
                         </div>
                         <div class="table-responsive schema-table">
-                            <table class="table table-condensed table-hover">
+                            <table class="table table-condensed table-hover" >
                                 <thead>
                                 </thead>
                                 <tbody>
                                     {% for c in m.1 %}
                                     <tr>
-                                        <td width="50%"><code>{{ c.0 }}</code></td>
+                                        <td><code>{{ c.0 }}</code></td>
                                         <!-- This will show the type of the column as well -->
-                                        <td width="50%" class="text-muted"><small>{{ c.1 }}</small></td>
+                                        <td class="text-muted"><small>{{ c.1 }}</small></td>
                                     </tr>
                                     {% endfor %}
                                 </tbody>
@@ -73,4 +75,5 @@
         });
     });
 </script>
+</html>
 {% endblock %}
