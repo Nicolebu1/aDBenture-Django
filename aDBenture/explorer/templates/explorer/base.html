@@ -1,6 +1,5 @@
 {% load i18n static %}
 
-<!DOCTYPE html>
 <html>
 
 <head>
@@ -17,7 +16,7 @@
     <link rel="stylesheet" href="{% static 'explorer/css/codemirror.min.css' %}" />
     <link rel="stylesheet" href="{% static 'explorer/css/pivot.min.css' %}" />
     <link rel="stylesheet" href="{% static 'explorer/css/bootstrap.min.css' %}" />
-    <link rel="stylesheet" href="{% static 'explorer/css/explorer.css' %}" />
+
 
     <script src="{% static 'explorer/js/jquery.min.js' %}"></script>
     <script src="{% static 'explorer/js/jquery.cookie.min.js' %}"></script>
@@ -38,9 +37,10 @@
     font-family: 'Roboto', sans-serif;
     }
 
+
 /*--------------------------------------- Form  ----------------------------------------*/
   form {
-    width: 60%;
+    width: 90%;
     margin: auto;
   }
 
@@ -61,6 +61,7 @@
    /* Avatar image */
   .profileImgSmall {
   height: 5em;
+  width: 5em;
   }
 
 figure {
@@ -318,7 +319,7 @@ margin-top:5%;
  /*--------------------------------------------- Avatar ----------------------------------------*/
 
 
-img{
+.avatar{
     width:90px;
     height:90px;
 }
@@ -603,7 +604,7 @@ details{
 
   @media  (max-width: 600px) {
 
-  img{
+  .avatar{
         width:50px;
         height:50px;
     }
@@ -682,9 +683,10 @@ details{
  }
 
  .imageAdventure{
- width:60%;
  padding:0;
  }
+
+
 
  .continue{
  visibility: hidden;
@@ -700,18 +702,16 @@ details{
   {% block sql_explorer_content_takeover %}
     <div id="wrap" class="wrap">
         {% block sql_explorer_navbar %}
-            <div class="navbar navbar-default navbar-static-top" role="navigation">
+
               <div class="container">
-                <div class="navbar-header">
-                    <a class="navbar-brand" href="{% url 'explorer_index' %}">{% trans "SQL Explorer" %}</a>
-                </div>
+
                 <div class="navbar-collapse collapse">
                   <ul class="nav navbar-nav">
                     {% block sql_explorer_navlinks %}{% endblock %}
                   </ul>
                 </div>
               </div>
-            </div>
+
         {% endblock %}
         <div class="container">
           <div class="starter-template">
