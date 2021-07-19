@@ -1,7 +1,0 @@
-
-m%Web:ItemTagNotWithinContainerTagCheck"<Surround this <li> item tag by a <ul> or <ol> container one.(Â°ûË
-m%Web:ItemTagNotWithinContainerTagCheck"<Surround this <li> item tag by a <ul> or <ol> container one.(Åü’ÿ
-r%Web:ItemTagNotWithinContainerTagCheck	"<Surround this <li> item tag by a <ul> or <ol> container one.(¨ÁÓÑÿÿÿÿÿ
-CWeb:BoldAndItalicTagsCheck+"Replace this <i> tag by <em>.(ÝÞí®
-C	Web:S1827T"/Remove this deprecated "frameBorder" attribute.(·…ÍA
-RWeb:FrameWithoutTitleCheckT"-Add a "title" attribute to this <iframe> tag.(·…ÍA

@@ -1,9 +1,0 @@
-
-HWeb:BoldAndItalicTagsCheck!"Replace this <i> tag by <em>.(•ÝØ§ýÿÿÿÿ
-HWeb:TableWithoutCaptionCheck)" Add a description to this table.(« Œž
-l Web:TableHeaderHasIdOrScopeCheck,";Add either an 'id' or a 'scope' attribute to this <th> tag.(æ™‰ìÿÿÿÿÿ
-l Web:TableHeaderHasIdOrScopeCheck.";Add either an 'id' or a 'scope' attribute to this <th> tag.(›ÄÕÙÿÿÿÿÿ
-g Web:TableHeaderHasIdOrScopeCheck2";Add either an 'id' or a 'scope' attribute to this <th> tag.(³ªÄ—
-l Web:TableHeaderHasIdOrScopeCheck4";Add either an 'id' or a 'scope' attribute to this <th> tag.(™À§ãÿÿÿÿÿ
-HWeb:BoldAndItalicTagsCheck6"Replace this <i> tag by <em>.(èû÷åùÿÿÿÿ
-CWeb:BoldAndItalicTagsChecks"Replace this <i> tag by <em>.(¿åàš
