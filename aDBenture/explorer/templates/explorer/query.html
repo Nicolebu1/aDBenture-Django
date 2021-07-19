@@ -1,15 +1,5 @@
 {% extends "explorer/base.html" %}
 {% load explorer_tags i18n %}
-{% block sql_explorer_content %}
-
-<html>
-<head>
-  <title>Dashboard</title>
-  <meta http-equiv="content-type" content="text/html; charset=utf-8">
-  <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
-</head>
-{% extends "explorer/base.html" %}
-{% load explorer_tags i18n %}
 
 {% block sql_explorer_content %}
 
@@ -105,7 +95,7 @@
                     <label for="id_title" class="col-sm-2 control-label"></label>
 
                     <div class="col-sm-8" >
-                       <input class="form-control" id="id_title" name="title" {% if not can_change %}disabled{% endif %} value="{{ form.title.value|default_if_none:"0" }}" />
+                       <input class="form-control" style = "display: none;" id="id_title" name="title" {% if not can_change %}disabled{% endif %} value="{{ form.title.value|default_if_none:"0" }}" />
                     </div>
                   {% if form.connections|length > 1 and can_change %}
                     </div>
@@ -150,19 +140,19 @@
                                 <span class="caret"></span>
                                 <span class="sr-only">{% trans "Toggle Dropdown" %}</span>
                               </button>
+                              <ul class="dropdown-menu">
                                 {% export_buttons query %}
                               </ul>
-                        {% endif %}
                             </div>
-                              <ul class="dropdown-menu">
-                </div>
+                        {% endif %}
                     </div>
+                </div>
+
 
         </div>
+    </div>
     <div id="schema" style="display: none;" >
         <iframe src=""  style=" width: 650px; height: 700px; overflow:hidden;" id="schema_frame"></iframe>
-    </div>
-
     </div>
 </div>
 {% include 'explorer/preview_pane.html' %}
@@ -172,8 +162,8 @@
       {{ form.snapshot }} Snapshot
     {% endif %}
   </div>
-{% endblock %}
 </div>
+{% endblock %}
 
 {% block sql_explorer_scripts %}
     <script>
@@ -192,8 +182,8 @@
             })
             {% if query %}
                 $('.panel-content').hide();
+            {% endif %}
         });
+    </script>
 </html>
 {% endblock %}
-    </script>
-            {% endif %}

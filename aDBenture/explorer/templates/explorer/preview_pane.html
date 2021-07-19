@@ -41,21 +41,7 @@
                                                 <th class="preview-header"><span class="sort" data-sort="{{ forloop.counter0 }}" data-dir="asc">{{ h }}</span></th>
                                             {% endfor %}
                                         </tr>
-                                        <tr class="stats-th">
-                                          <th class="counter"></th>
-                                          {% for h in headers %}
-                                          <th>
-                                            {% if h.summary %}
-                                              <i class="stats-expand glyphicon glyphicon-education"></i>
-                                              <div class="stats-wrapper">
-                                                  {% for label, value in h.summary.stats.items %}
-                                                      <div class="stat-wrapper"><span class="stat-label">{{ label }}:&nbsp;</span><span class="stat-value">{{ value }}</span></div>
-                                                  {% endfor %}
-                                              </div>
-                                            {% endif %}
-                                          </th>
-                                          {% endfor %}
-                                        </tr>
+                                        
 
                                     </thead>
                                     <tbody class="list">
