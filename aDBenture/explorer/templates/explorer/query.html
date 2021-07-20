@@ -52,8 +52,9 @@
      <br>
 
     <div class="container">
-      <div class="box1">
-        <div id="aufgabe_1" class="aufgabe">
+
+      <div class="box1" style="height: 150px; margin:0;">
+        <div id="aufgabe_1" class="aufgabe" style="float:left;">
           <p class="question"><span style="color:#0D6EFD; font-size:20px;">Projektion und Selection</span>
             <br>
             <p style="text-align: justify;"> „Bella“, die geliebte Dalmatinerhündin der Familie Reich wurde entführt. Chefinspektorin Lara
@@ -62,10 +63,17 @@
               Um die Verdächtigen einzugrenzen, möchten sie eine duplikatfreie Übersicht über alle Banden
               erstellen.
               <br>Wie könnte die SQL Abfrage lauten?</p>
-                <br>
-                <br>
+
         </div>
+
+              <div id="schema" style=" float:right; margin:0; margin-right: -35%;" >
+                  <iframe src=""  style=" width: 650px; height: 400px; overflow:hidden;" id="schema_frame"></iframe>
+              </div>
+
       </div>
+
+
+
     </div>
 </form>
 </body>
@@ -151,9 +159,9 @@
 
         </div>
     </div>
-    <div id="schema" style="display: none;" >
-        <iframe src=""  style=" width: 650px; height: 700px; overflow:hidden;" id="schema_frame"></iframe>
-    </div>
+    <div style=" float: left; height: 200px;" class="query-area col-md-6"></div>
+
+
 </div>
 {% include 'explorer/preview_pane.html' %}
 <div class="row">
