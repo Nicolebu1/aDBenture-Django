@@ -9,7 +9,7 @@
                         <div class="panel panel-default">
                             <div class="panel-heading">
                               <div class="row">
-                                <div class="col-md-6">
+                                <div class="col-md-9">
                                   {% if data %}<a title="Show row numbers" id="counter-toggle" href="#">Anzahl Ergebniszeilen: </a>&nbsp;{% endif %}
 
                                 </div>
@@ -32,8 +32,8 @@
                                 </div>
                               </div>
                             </div>
-                            <div class="overflow-wrapper">
-                                <table class="table table-striped table-hover" id="preview">
+                            <div class="overflow-wrapper" style="overflow:scroll; height: 500px;">
+                                <table class="table table-striped table-hover" id="preview" style="margin-left:-0.1%;">
                                     <thead class="data-headers">
                                         <tr>
                                             <th class="preview-header counter"></th>
@@ -41,21 +41,7 @@
                                                 <th class="preview-header"><span class="sort" data-sort="{{ forloop.counter0 }}" data-dir="asc">{{ h }}</span></th>
                                             {% endfor %}
                                         </tr>
-                                        <tr class="stats-th">
-                                          <th class="counter"></th>
-                                          {% for h in headers %}
-                                          <th>
-                                            {% if h.summary %}
-                                              <i class="stats-expand glyphicon glyphicon-education"></i>
-                                              <div class="stats-wrapper">
-                                                  {% for label, value in h.summary.stats.items %}
-                                                      <div class="stat-wrapper"><span class="stat-label">{{ label }}:&nbsp;</span><span class="stat-value">{{ value }}</span></div>
-                                                  {% endfor %}
-                                              </div>
-                                            {% endif %}
-                                          </th>
-                                          {% endfor %}
-                                        </tr>
+
 
                                     </thead>
                                     <tbody class="list">
