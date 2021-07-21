@@ -19,7 +19,8 @@
     <br>
       <h1>Willkommen bei a<span style="color: #0D6EFD;">DB</span>enture</h1>
 
-    <a href = "profile" style="text-decoration: none;">
+
+      <a href = "profile" style="text-decoration: none;">
     <figure>
       {% if user.profile_img%}
         <img src="{{user.profile_img.url}}" alt="Avatar" class="profileImgSmall" />
@@ -29,6 +30,8 @@
         <figcaption><center>{{request.user.nick_name}}</center></figcaption>
         <a class="small" href="{% url 'logout' %}"><center>Logout</center></a>
     </figure></a>
+
+
 </header>
 
 
