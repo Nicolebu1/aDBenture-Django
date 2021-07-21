@@ -9,11 +9,6 @@
   <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
 </head>
 
-<style>
-
-
-</style>
-
 <body>
 
 <header>
@@ -39,7 +34,7 @@
 </header>
 
 <form>
-    <div class="navbar">
+    <div class="navbar" style="margin-bottom:0;" >
         <div class="dropdown" style="padding: 1%; color: white;">Abenteuer Soko DB:</div>
         <div>
               <a class="fa fa-fw fa-home" href = "../../login"></a>
@@ -79,11 +74,9 @@
 </body>
 
 <div class="row">
-    <div id="query_area" class="query-area col-md-8">
+    <div style="margin-left:5%;" id="query_area" class="query-area col-md-6">
 
-        {% if message %}
-            <div class="alert alert-info">{{ message }}</div>
-        {% endif %}
+
         <div>
             {% if query %}
                 <form role="form" class="form-horizontal" action="{% url 'query_detail' query.id %}" method="post" id="editor">{% csrf_token %}
@@ -102,7 +95,7 @@
 
                     <label for="id_title" class="col-sm-2 control-label"></label>
 
-                    <div class="col-sm-8" >
+                    <div class="col-sm-8">
                        <input class="form-control" style = "display: none;" id="id_title" name="title" {% if not can_change %}disabled{% endif %} value="{{ form.title.value|default_if_none:"0" }}" />
                     </div>
                   {% if form.connections|length > 1 and can_change %}
@@ -119,7 +112,7 @@
                     </div>
                   {% endif %}
                 </div>
-                <input type="hidden" id="id_created_by_user" name="created_by_user" value="{{ form.created_by_user_email }}" />
+                <input  type="hidden" id="id_created_by_user" name="created_by_user" value="{{ form.created_by_user_email }}" />
                 {% if form.sql.errors %}{% for error in form.sql.errors %}
                     <div class="alert alert-danger">{{ error|escape }}</div>
                 {% endfor %}{% endif %}
@@ -131,7 +124,12 @@
                       {% include 'explorer/params.html' %}
                     {% endif %}
                 </div>
-                <div class="form-group">
+
+        </div>
+
+    </div>
+
+    <div class="form-group" >
                     <div class="text-center">
                         {% if can_change %}
                             <div class="btn-group">
@@ -156,12 +154,9 @@
                     </div>
                 </div>
 
-
-        </div>
-    </div>
-
-
 </div>
+
+
 {% include 'explorer/preview_pane.html' %}
 <div class="row">
   <div class="col-md-6">
@@ -173,7 +168,9 @@
 {% endblock %}
 
 {% block sql_explorer_scripts %}
+
     <script>
+
         $(function() {
             var e = new ExplorerEditor(queryId);
 
