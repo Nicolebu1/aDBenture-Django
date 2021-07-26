@@ -84,6 +84,15 @@ DATABASES = {
         'PASSWORD': '0000',
         'HOST': '127.0.0.1',
         'PORT': '5432',
+    },
+
+    'WinDBoe': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'WinDBoe',
+        'USER': 'postgres',
+        'PASSWORD': '0000',
+        'HOST': '127.0.0.1',
+        'PORT': '5432',
     }
 }
 
@@ -133,5 +142,8 @@ STATICFILES_DIRS = [
 ]
 
 #TO DO: Set to readonly after development
-EXPLORER_CONNECTIONS = { 'LokiDB': 'LokiDB' }
-EXPLORER_DEFAULT_CONNECTION = 'LokiDB'
+# EXPLORER_CONNECTIONS = { 'LokiDB': 'LokiDB', 'WinDBoe': 'WinDBoe' }
+# EXPLORER_DEFAULT_CONNECTION = 'LokiDB'
+
+EXPLORER_CONNECTIONS = { 'WinDBoe': 'WinDBoe', 'LokiDB': 'LokiDB' }
+EXPLORER_DEFAULT_CONNECTION = 'WinDBoe'
