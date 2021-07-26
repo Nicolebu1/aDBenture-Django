@@ -9,7 +9,7 @@
                         <div class="panel panel-default">
                             <div class="overflow-wrapper" style="overflow:scroll; max-height: 500px;">
                                 <table class="table table-striped table-hover" id="preview" style="margin-left:-0.1%;">
-                                    <thead class="data-headers">
+                                    <thead class="data-headers" style="background-color: #FFFFFF">
                                         <tr>
                                             <th class="preview-header counter"></th>
                                             {% for h in headers %}
@@ -19,11 +19,11 @@
 
 
                                     </thead>
-                                    <tbody class="list" style="background-color: #FFFFFF !important;">
+                                    <tbody class="list">
                                         {% if data %}
                                             {% for row in data %}
                                             <tr class="data-row">
-                                              <td>{{ forloop.counter0 }}</td>
+                                              <td >{{ forloop.counter0 }}</td>
                                                 {% for i in row %}
                                                   {% if unsafe_rendering %}
                                                     <td  class="{{ forloop.counter0 }}">{% autoescape off %}{{ i }}{% endautoescape %}</td>
