@@ -19,9 +19,6 @@ pip install django-widget-tweaks
 PILLOW <br>
 pip install pillow
 
-SQL EXPLORER <br>
-pip install django-sql-explorer
-
 POSTGRES <br>
 pip install psycopg2-binary
 
