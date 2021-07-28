@@ -83,7 +83,6 @@ DATABASES = {
         'USER': 'postgres',
         'PASSWORD': '0000',
         'HOST': '127.0.0.1',
-        'PORT': '5432',
     },
 
     'WinDBoe': {
@@ -92,7 +91,6 @@ DATABASES = {
         'USER': 'postgres',
         'PASSWORD': '0000',
         'HOST': '127.0.0.1',
-        'PORT': '5432',
     }
 }
 
