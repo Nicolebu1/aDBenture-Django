@@ -4,7 +4,7 @@
 
 {% block sql_explorer_content_takeover %}
 <html>
-<div class="schema-wrapper" style="overflow-x: hidden;">
+<div class="schema-wrapper" style="overflow-x: hidden;  max-height: 700px;">
     <h4 class="text-center">Schema</h4>
 
     <div id="tables" style="margin-left:30%;">
@@ -22,7 +22,7 @@
             {% for m in schema %}
                 <li>
                     <div class="panel panel-default">
-                        <div class="panel-heading schema-header">
+                        <div class="panel-heading schema-header" style="margin-bottom: -5%;">
                             <h4 class="name panel-title" style="display: inline-block">{{ m.0 }}</h4>
                         </div>
                         <div class="table-responsive schema-table" style="overflow-x: hidden;">
