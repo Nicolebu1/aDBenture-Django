@@ -77,6 +77,7 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     },
 
+<<<<<<< HEAD
  #   'LokiDB': {
  #       'ENGINE': 'django.db.backends.postgresql_psycopg2',
  #       'NAME': 'LokiDB',
@@ -85,6 +86,15 @@ DATABASES = {
  #       'HOST': '127.0.0.1',
  #       'PORT': '5432',
  #   },
+=======
+    'LokiDB': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'LokiDB',
+        'USER': 'postgres',
+        'PASSWORD': '0000',
+        'HOST': '127.0.0.1',
+    },
+>>>>>>> a069f708b2671e6b2a8528fdc3fba715f6bc7364
 
     'WinDBoe': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
@@ -92,7 +102,6 @@ DATABASES = {
         'USER': 'postgres',
         'PASSWORD': '0000',
         'HOST': '127.0.0.1',
-        'PORT': '5432',
     }
 }
 
