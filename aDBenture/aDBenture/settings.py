@@ -77,14 +77,14 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     },
 
-    'LokiDB': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'LokiDB',
-        'USER': 'postgres',
-        'PASSWORD': '0000',
-        'HOST': '127.0.0.1',
-        'PORT': '5432',
-    },
+ #   'LokiDB': {
+ #       'ENGINE': 'django.db.backends.postgresql_psycopg2',
+ #       'NAME': 'LokiDB',
+ #       'USER': 'postgres',
+ #       'PASSWORD': '0000',
+ #       'HOST': '127.0.0.1',
+ #       'PORT': '5432',
+ #   },
 
     'WinDBoe': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
@@ -145,5 +145,5 @@ STATICFILES_DIRS = [
 # EXPLORER_CONNECTIONS = { 'LokiDB': 'LokiDB', 'WinDBoe': 'WinDBoe' }
 # EXPLORER_DEFAULT_CONNECTION = 'LokiDB'
 
-EXPLORER_CONNECTIONS = { 'WinDBoe': 'WinDBoe', 'LokiDB': 'LokiDB' }
-EXPLORER_DEFAULT_CONNECTION = 'LokiDB'
+EXPLORER_CONNECTIONS = { 'WinDBoe': 'WinDBoe'}
+EXPLORER_DEFAULT_CONNECTION = 'WinDBoe'
